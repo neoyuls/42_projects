@@ -1,44 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: neoyuls <neoyuls@student.42.es>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/15 16:45:27 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/15 16:50:41 by neoyuls          ###   ########.fr       */
+/*   Created: 2026/07/18 00:40:16 by neoyuls           #+#    #+#             */
+/*   Updated: 2026/07/18 01:05:37 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* 	funciones obligatorias a escribir:
-* isalpha
-* isdigit
-* isalnum
-* isascii
-* isprint
-* strlen
-* memset
-* bzero
-* memcpy
-* memmove
-* strlcpy
-* strlcat
-* toupper
-* tolower
-* strchr
-* strrchr
-* strncmp
-* memchr
-* memcmp
-* strnstr
-* atoi
-* 	Con malloc:
-* calloc
-* strdup
-*
-*	funciones adicionales:
-* ft_substr
-* fr_strjoin
-* ft_strtrim
-*
-*/
+int	ft_isprint(int c)
+{
+	if (c >= 32 && c <= 255)
+		return (1);
+	else
+		return (0);
+}
