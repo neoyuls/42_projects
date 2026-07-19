@@ -6,23 +6,47 @@
 /*   By: neoyuls <neoyuls@student.42.es>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 01:12:40 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/18 02:47:41 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/19 18:55:38 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memset(void *s, int c, unsigned int n)
 {
 	unsigned int	i;
+	char *ptr;
+	unsigned char ch;
 
+	ch = (unsigned char)c;
+	ptr = (char *)s;
 	if (n == 0)
 		return (s);
 	i = 0;
-
-	if (n == 0)
-		return (s);
 	while (i < n)
 	{
+		ptr[i] = ch;
+		*(unsigned char *)s = ptr[i];
+		*(unsigned char *)s = *(unsigned char *)(s + 1);
 		i++;
 	}
-	return (s)
+	return (s);
+}
+
+#include <unistd.h>
+
+int	main(void)
+{
+	char str[20] = "hola bb yo soy yuls";
+	unsigned int off = 15;
+	int c = 35;
+
+	write(1, "Before:", 7);
+	for (int i = 0; str[i]; i++)
+		write(1, &str[i], 1);
+	write(1, "\n", 1);
+	write(1, "After:", 6);
+	ft_memset(str, c, off);
+	for (int j = 0; str[j]; j++)
+		write(1, &str[j], 1);
+	write(1, "\n", 1);
+	return (0);
 }
