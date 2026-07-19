@@ -1,53 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: neoyuls <neoyuls@student.42.es>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/18 01:12:40 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/19 19:12:04 by neoyuls          ###   ########.fr       */
+/*   Created: 2026/07/19 19:01:11 by neoyuls           #+#    #+#             */
+/*   Updated: 2026/07/19 19:12:08 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, unsigned int n)
+void ft_bzero(void *s, unsigned int n)
 {
-	unsigned int	i;
+	unsigned char	zero;
 	unsigned char	*ptr;
-	unsigned char	ch;
+	unsigned int	i;
 
-	ch = (unsigned char)c;
 	ptr = (unsigned char *)s;
+	zero = 0;
 	if (n == 0)
-		return (s);
+		return ;
 	i = 0;
 	while (i < n)
 	{
-		ptr[i] = ch;
+		ptr[i] = zero;
 		*(unsigned char *)s = ptr[i];
 		*(unsigned char *)s = *(unsigned char *)(s + 1);
 		i++;
 	}
-	return (s);
 }
-/*
-#include <unistd.h>
-
-int	main(void)
-{
-	char str[20] = "hola bb yo soy yuls";
-	unsigned int off = 15;
-	int c = 35;
-
-	write(1, "Before:", 7);
-	for (int i = 0; str[i]; i++)
-		write(1, &str[i], 1);
-	write(1, "\n", 1);
-	write(1, "After:", 6);
-	ft_memset(str, c, off);
-	for (int j = 0; str[j]; j++)
-		write(1, &str[j], 1);
-	write(1, "\n", 1);
-	return (0);
-}
-*/
