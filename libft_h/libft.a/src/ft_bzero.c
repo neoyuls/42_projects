@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neoyuls <neoyuls@student.42.es>            +#+  +:+       +#+        */
+/*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/19 19:54:23 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/19 19:54:28 by neoyuls          ###   ########.fr       */
+/*   Created: 2026/07/20 17:42:34 by neoyuls           #+#    #+#             */
+/*   Updated: 2026/07/20 17:42:39 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ void ft_bzero(void *s, unsigned int n)
 	while (i < n)
 	{
 		ptr[i] = zero;
-		*(unsigned char *)s = ptr[i];
-		*(unsigned char *)s = *(unsigned char *)(s + 1);
 		i++;
 	}
 }

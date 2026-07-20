@@ -1,20 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/20 18:10:17 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/20 18:10:19 by neoyuls          ###   ########.fr       */
+/*   Created: 2026/07/20 17:42:15 by neoyuls           #+#    #+#             */
+/*   Updated: 2026/07/20 17:42:19 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
-{
-	int	i;
 
-	i = 0;
-	if (size == 0)
-		return (0);
-}
