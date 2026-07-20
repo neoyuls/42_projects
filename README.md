@@ -6,14 +6,6 @@ The way I will organize this is:
 
 project name -> subject and program name -> relevant files and directories
 
-42_projects/ \
-|\
-|- $project_name/\
-||-$program/\
-|||\
-||-subject/\
-|||- subject.*.pdf\
-
 <pre>
 📦 42_projects
  ┣ 📂 PROJECT NAME
