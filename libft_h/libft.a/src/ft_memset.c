@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 18:10:11 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/20 18:10:12 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/20 18:16:35 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ void	*ft_memset(void *s, int c, unsigned int n)
 	}
 	return (s);
 }
-#include <unistd.h>
+
 /*
+#include <unistd.h>
+
 int	main(void)
 {
 	char str[20] = "hola bb yo soy yuls";
