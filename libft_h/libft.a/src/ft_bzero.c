@@ -6,10 +6,10 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 17:42:34 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/20 17:42:39 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/20 19:56:40 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+// UNCLEAR IF DONE, REVISIT LATER, ALSO WRITE A MAIN LAZY ASS
 void ft_bzero(void *s, unsigned int n)
 {
 	unsigned char	zero;
