@@ -13,3 +13,18 @@ project name -> subject and program name -> relevant files and directories
 |||\
 ||-subject/\
 |||- subject.*.pdf\
+
+<pre>
+📦 42_projects
+ ┣ 📂 PROJECT NAME
+ ┃ ┣ 📂 Program name
+ ┃ ┃ ┣ 📂 includes
+ ┃ ┃ ┃ ┗ 📜 header files (.h)
+ ┃ ┃ ┗ 📂 src
+ ┃ ┃ ┃ ┗ 📜 source files (.c)
+ ┃ ┗ 📂 Subject
+ ┃ ┃ ┗ 📜 subject (.pdf)
+ ┣ 📜 .gitignore
+ ┗ 📜 README.md
+</pre>
+
