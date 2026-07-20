@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 18:27:01 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/20 18:56:38 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/20 19:51:30 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 // UNFINISHED!
@@ -33,13 +33,18 @@ int	ft_atoi(const char *nbr)
 	return (num * sign);
 }
 
+/* TESTING
 #include <stdio.h>
+#include <stdlib.h>
 
 int	main(int ac, char **av)
 {
 	if (ac != 2)
 		return (1);
 	int result = ft_atoi(av[1]);
-	printf("Atoi output = %d \n", result);
+	int r2 = atoi(av[1]);
+	printf("ft_atoi output = %d \n", result);
+	printf("stdlib atoi = %d \n", r2);
 	return 0;
 }
+*/
