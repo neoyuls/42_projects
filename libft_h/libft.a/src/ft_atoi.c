@@ -6,20 +6,10 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 14:36:33 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/21 17:18:48 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/21 17:20:51 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-➜  libft.a git:(main) ./a.out "-23534500000004210000....412321312"
-	ft_atoi output	= -313425232
-	stdlib atoi 	= 0
-➜  libft.a git:(main) ✗ ./a.out "999999999999990909090....412321312"
-	ft_atoi output  = -569030494
-	stdlib atoi     = -1
-	
-	why does this happen?
- */
 int	ft_atoi(const char *nbr)
 {
 	int				num;
