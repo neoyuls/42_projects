@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/21 14:13:41 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/21 14:27:53 by neoyuls          ###   ########.fr       */
+/*   Created: 2026/07/21 14:36:33 by neoyuls           #+#    #+#             */
+/*   Updated: 2026/07/21 14:36:35 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 ➜  libft.a git:(main) ./a.out "-23534500000004210000....412321312"
 	ft_atoi output	= -313425232
 	stdlib atoi 	= 0
+➜  libft.a git:(main) ✗ ./a.out "999999999999990909090....412321312"
+	ft_atoi output  = -569030494
+	stdlib atoi     = -1
 	
 	why does this happen?
  */
@@ -40,7 +43,8 @@ int	ft_atoi(const char *nbr)
 	}
 	return (num * sign);
 }
-/* TESTING
+
+/*
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -50,8 +54,8 @@ int	main(int ac, char **av)
 		return (1);
 	int result = ft_atoi(av[1]);
 	int r2 = atoi(av[1]);
-	printf("ft_atoi output = %d \n", result);
-	printf("stdlib atoi = %d \n", r2);
+	printf("\tft_atoi output \t= %d \n", result);
+	printf("\tstdlib atoi \t= %d \n", r2);
 	return 0;
 }
 */
