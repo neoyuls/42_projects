@@ -6,9 +6,10 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 17:42:15 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/20 19:57:01 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/21 14:17:33 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 // REVISIT LATER
 void	*ft_memcpy(void *dest, const void *src, unsigned int n)
 {

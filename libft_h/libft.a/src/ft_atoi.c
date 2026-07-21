@@ -5,34 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/20 18:27:01 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/20 19:51:30 by neoyuls          ###   ########.fr       */
+/*   Created: 2026/07/21 14:13:41 by neoyuls           #+#    #+#             */
+/*   Updated: 2026/07/21 14:16:08 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-// UNFINISHED!
+
 int	ft_atoi(const char *nbr)
 {
+	int				num;
+	int				sign;
 	unsigned int	i;
-	int	num;
-	int sign;
 
 	i = 0;
 	num = 0;
 	sign = 1;
-	
-	if (nbr[0] == '-')
+	if (nbr[i] == '-')
 	{
 		sign = -1;
 		i++;
 	}
-	while (nbr[i])
+	else if (nbr[i] == '+')
+		i++;
+	while (nbr[i] >= 48 && nbr[i] <= 57)
 	{
 		num = (num * 10) + (nbr[i] - 48);
 		i++;
 	}
 	return (num * sign);
 }
-
 /* TESTING
 #include <stdio.h>
 #include <stdlib.h>
