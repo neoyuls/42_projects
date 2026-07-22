@@ -6,12 +6,11 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 18:10:17 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/21 18:01:43 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/21 18:17:36 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// VERY UNFINISHED, WILL DO LATER
-// I DONT LIKE THIS FUNCTION
+// UNFINISHED(?) I DONT LIKE THIS FUNCTION
 unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 {
 	unsigned int	i;
@@ -24,19 +23,24 @@ unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 		dest[i] = src[i];
 		i++;
 	}
-	if (size >= i)
-		dest[i] = '\0';
+	dest[i] = '\0';
 	return (i);
 }
-
+/* TESTING
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 int	main(int ac, char **av)
 {
 	if (ac != 3)
-		return (0);
+		return (1);
+	if (atoi(av[2]) < 0)
+	{
+		write (2, "Error!\n", 7);
+		return (1);
+	}
 	unsigned int size = (unsigned int)atoi(av[2]);
 	char dest[50];
 	char *src = av[1];
@@ -50,3 +54,4 @@ int	main(int ac, char **av)
 	printf("\tdest: %s\n", dest);
 	return (0);
 }
+*/
