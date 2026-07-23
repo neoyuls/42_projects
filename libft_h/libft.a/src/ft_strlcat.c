@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 10:53:04 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/23 11:11:45 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/23 12:26:07 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	while (dest[j])
 		j++;
 	if (size == 0)
-		return (i);	
+		return (i);
 	if (j > size)
 		return (i + size);
 	i = 0;

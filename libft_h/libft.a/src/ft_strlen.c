@@ -6,14 +6,14 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 18:10:29 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/20 18:10:30 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/23 12:27:07 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 unsigned int	ft_strlen(char *s)
 {
-	unsigned int i;
-	
+	unsigned int	i;
+
 	i = 0;
 	while (s[i])
 		i++;

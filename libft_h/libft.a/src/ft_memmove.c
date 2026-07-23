@@ -6,10 +6,11 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 11:18:53 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/23 12:19:39 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/23 12:25:17 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// REVISIT LATER
 void	*ft_memmove(void *dest, const void *src, unsigned int n)
 {
 	unsigned int	i;
