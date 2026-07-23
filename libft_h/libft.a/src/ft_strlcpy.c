@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 18:10:17 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/21 18:17:36 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/23 10:06:57 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,11 @@ unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 	unsigned int	i;
 
 	i = 0;
+	while (src[i])
+		i++;
 	if (size == 0)
-		return (size);
+		return (i);
+	i = 0;
 	while (i < size - 1 && src[i])
 	{
 		dest[i] = src[i];
@@ -26,7 +29,7 @@ unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 	dest[i] = '\0';
 	return (i);
 }
-/* TESTING
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -45,13 +48,14 @@ int	main(int ac, char **av)
 	char dest[50];
 	char *src = av[1];
 	printf("my function: \n");
-	ft_strlcpy(dest, src, size);
+	unsigned int r1 = ft_strlcpy(dest, src, size);
 	printf("\tsource: %s\n", src);
 	printf("\tdest: %s\n", dest);
-	strlcpy(dest, src, size);
+	printf("\treturn: %d\n", r1);
+	unsigned int r2 = strlcpy(dest, src, size);
 	printf("string.h function: \n");
 	printf("\tsource: %s\n", src);
 	printf("\tdest: %s\n", dest);
+	printf("\treturn: %d\n", r2);
 	return (0);
 }
-*/
