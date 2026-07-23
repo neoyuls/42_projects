@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 18:10:17 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/23 10:06:57 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/23 10:08:50 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 	return (i);
 }
 
+/*
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -59,3 +60,4 @@ int	main(int ac, char **av)
 	printf("\treturn: %d\n", r2);
 	return (0);
 }
+*/
