@@ -6,23 +6,21 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 11:18:53 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/23 12:14:21 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/23 12:19:39 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memmove(void *dest, const void *src, unsigned int n)
 {
 	unsigned int	i;
-	unsigned char	tmp[n];
-	unsigned char	*source;
+	unsigned char	*tmp;
 	unsigned char	*destination;
 
 	destination = (unsigned char *)dest;
-	source = (unsigned char *)src;
+	tmp = (unsigned char *)src;
 	i = 0;
 	while (i < n)
 	{
-		tmp[i] = source[i];
 		destination[i] = tmp[i];
 		i++;
 	}
