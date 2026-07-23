@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 18:10:17 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/23 10:12:55 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/23 10:22:48 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 	return (i);
 }
 
-/*
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -48,17 +47,17 @@ int	main(int ac, char **av)
 	}
 	unsigned int size = (unsigned int)atoi(av[2]);
 	char dest[50];
+	char dest2[50];
 	char *src = av[1];
 	printf("my function: \n");
 	unsigned int r1 = ft_strlcpy(dest, src, size);
 	printf("\tsource: %s\n", src);
 	printf("\tdest: %s\n", dest);
 	printf("\treturn: %d\n", r1);
-	unsigned int r2 = strlcpy(dest, src, size);
+	unsigned int r2 = strlcpy(dest2, src, size);
 	printf("string.h function: \n");
 	printf("\tsource: %s\n", src);
 	printf("\tdest: %s\n", dest);
 	printf("\treturn: %d\n", r2);
 	return (0);
 }
-*/
