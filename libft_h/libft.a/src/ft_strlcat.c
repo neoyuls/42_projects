@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 10:53:04 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/23 11:10:17 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/23 11:11:45 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	dest[j + i] = '\0';
 	return (i + j);
 }
-
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -58,3 +58,4 @@ int	main(int ac, char **av)
 	printf("\treturn: %d\n", r1);
 	return (0);
 }
+*/
