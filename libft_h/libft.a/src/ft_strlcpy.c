@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 18:10:17 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/23 10:11:42 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/23 10:12:55 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 	dest[j] = '\0';
 	return (i);
 }
+
 /*
 #include <stdio.h>
 #include <string.h>
