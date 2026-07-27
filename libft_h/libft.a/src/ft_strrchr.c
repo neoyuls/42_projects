@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/23 12:33:38 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/26 23:00:58 by neoyuls          ###   ########.fr       */
+/*   Created: 2026/07/26 22:36:31 by neoyuls           #+#    #+#             */
+/*   Updated: 2026/07/26 23:00:49 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
+	char	*found;
 	char	tofind;
-
+	int		i;
+	
+	i = 0;
+	found = ((void *)0);
 	tofind = (char)c;
 	while (*s != '\0')
 	{
 		if (*s == tofind)
-			return ((char *)s);
+		{
+			i += 1;
+			found = (char *)s;
+		}
 		s++;
 	}
-	return ((char *)s);
+	return ((void *)0);
 }
-
-/*
-#include <stdio.h>
-int	main(int ac, char **av)
-{
-	if (ac < 2)
-	{
-		printf("ERROR");
-		return 1;
-	}
-	char c = *ft_strchr(av[1], 65);
-	printf("found %c\n", c);
-	return 0;
-}
-*/
+// UNFINISHED, FINISH AFTER WORKING ON STRCHR
