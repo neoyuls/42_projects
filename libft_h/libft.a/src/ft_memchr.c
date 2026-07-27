@@ -22,7 +22,7 @@ void	*ft_memchr(const void *s, int c, unsigned int n)
 		str++;
 		n--;
 	}
-	return ((void *)0);
+	return (NULL);
 }
 // REVISIT AND TEST FURTHER LATER
 /*

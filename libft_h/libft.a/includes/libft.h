@@ -6,9 +6,14 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 04:03:36 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/27 04:15:33 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/27 04:29:44 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef LIBFT_H
+#define LIBFT_H
+
+#define	NULL ((void *)0)
 
 char				*ft_strchr(const char *s, int c);
 char				*ft_strnstr(const char *big,
@@ -33,3 +38,5 @@ void				*ft_memcpy(void *dest, const void *src, unsigned int n);
 void				*ft_memmove(void *dest, const void *src, unsigned int n);
 void				*ft_memset(void *s, int c, unsigned int n);
 void				*ft_calloc(unsigned int n, unsigned int size);
+
+#endif
