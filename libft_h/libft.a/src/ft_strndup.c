@@ -20,7 +20,7 @@ char	*ft_strndup(const char *s, unsigned int n)
 	i = 0;
 	new = malloc(sizeof(char) * (n + 1));
 	if (!new)
-		return (NULL);
+		return ((void *)0);
 	while (i < n && s[i])
 	{
 		new[i] = s[i];

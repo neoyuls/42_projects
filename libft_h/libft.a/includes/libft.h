@@ -6,14 +6,12 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 04:03:36 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/27 04:40:03 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/27 13:20:16 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
-# define NULL ((void *)0)
 
 char				*ft_strchr(const char *s, int c);
 char				*ft_strnstr(const char *big,

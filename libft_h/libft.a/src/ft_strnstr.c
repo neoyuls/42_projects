@@ -35,7 +35,7 @@ char	*ft_strnstr(const char *big, const char *little, unsigned int n)
 		}
 		i++;
 	}
-	return (NULL);
+	return ((void *)0);
 }
 /*
 #include <unistd.h>
