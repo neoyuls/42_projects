@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 12:33:38 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/26 23:00:58 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/26 23:06:21 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
-	return ((char *)s);
+	if (*s == 0)
+		return ((char *)s);
+	else
+		return ((void *)0);
 }
 
 /*

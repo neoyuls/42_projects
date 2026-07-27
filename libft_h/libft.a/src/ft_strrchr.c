@@ -6,28 +6,41 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/26 22:36:31 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/26 23:00:49 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/26 23:13:22 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*found;
-	char	tofind;
-	int		i;
 	
-	i = 0;
 	found = ((void *)0);
-	tofind = (char)c;
 	while (*s != '\0')
 	{
-		if (*s == tofind)
+		if (*s == (char)c)
 		{
-			i += 1;
 			found = (char *)s;
 		}
 		s++;
 	}
+	if (*s == 0)
+		return ((char *)s);
+	else if (*found == (char)c)
+		return (found);
 	return ((void *)0);
 }
-// UNFINISHED, FINISH AFTER WORKING ON STRCHR
+
+/*
+#include <stdio.h>
+int	main(int ac, char **av)
+{
+	if (ac < 2)
+	{
+		printf("ERROR");
+		return 1;
+	}
+	char c = *ft_strrchr(av[1], 65);
+	printf("found %c\n", c);
+	return 0;
+}
+*/
