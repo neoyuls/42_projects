@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 01:32:18 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/27 01:55:57 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/27 01:57:28 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memchr(const void *s, int c, unsigned int n)
 	}
 	return ((void *)0);
 }
-
+// REVISIT AND TEST FURTHER LATER
 /*
 #include <unistd.h>
 #include <string.h>
