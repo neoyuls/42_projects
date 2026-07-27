@@ -18,7 +18,9 @@ char	*ft_strndup(const char *s, unsigned int n)
 	unsigned int	i;
 
 	i = 0;
-	new = malloc(sizeof(char) * n);
+	new = malloc(sizeof(char) * (n + 1));
+	if (!new)
+		return (NULL);
 	while (i < n && s[i])
 	{
 		new[i] = s[i];
@@ -41,8 +43,15 @@ int	main(int ac, char **av)
 		return (1);
 	}
 
-	printf("My function:		%s \n", ft_strndup(av[1], atoi(av[2])));
-	printf("String.h function:	%s \n", strndup(av[1], atoi(av[2])));
+	char	*mine;
+	char	*ref;
+
+	mine = ft_strndup(av[1], atoi(av[2]));
+	ref = strndup(av[1], atoi(av[2]));
+	printf("My function:		%s \n", mine);
+	printf("String.h function:	%s \n", ref);
+	free(mine);
+	free(ref);
 	return (0);
 }
 */
