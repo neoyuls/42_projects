@@ -6,12 +6,14 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 12:54:30 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/27 13:10:34 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/28 14:45:22 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
+// Oops, made the wrong function (lol)
+// will keep this here but will exclude from assignment repo
 char	*ft_strndup(const char *s, unsigned int n)
 {
 	char			*new;
