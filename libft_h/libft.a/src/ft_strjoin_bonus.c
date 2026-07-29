@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 19:54:55 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/28 20:27:05 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/28 20:29:10 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ static char	*ft_allocate(const char *s1, const char *s2)
 	while (s2[j])
 		j++;
 	joined = malloc(sizeof(char) * (i + j + 1));
-	if (!joined)
-		return (NULL);
 	return (joined);
 }
 
@@ -37,6 +35,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 
 	i = 0;
 	joined = ft_allocate(s1, s2);
+	if (!joined)
+		return (NULL);
 	while (s1[i])
 	{
 		joined[i] = s1[i];
