@@ -35,7 +35,29 @@ char    find_char(char *string)
 }
 ```
 
+### Main functions
+
+Every c program will contain one `main` function; which will be where the program will begin executing code. Depending on complexity, main functions will generally be a sort of launching pad, initializing important variables, recieving input and calling other functions which will, in turn, call other functions. 
+
+A main function will generally return an `int`, being 0 if executed correctly, or 1 if there's an error.
+> *Recieving parameters*
+   A main function can recieve command line arguments by implementing the following:
+```c
+int main(int ac, char **av);
+// ac meaning 'argument count'
+// **av being a double pointer because it is an array of strings passed to the function
+```
+```sh
+./a.out "Hola" "Soy" "Yuls"
+# Would pass 4 arguments to the function
+# ac = 4
+# av[0] = "a.out" (filename)
+# av[1] = "Hola"
+# etc...
+```
+
+
 ### Return values and arguments
 
-    Most functions written in C will return some value, with a type defined in the first part of the function declaration. In addition to this, functions may (and in most cases, will) recieve arguments, in the form of values or variables defined in the last part of the function declaration.
+Most functions written in C will return some value, with a type defined in the first part of the function declaration. In addition to this, functions may (and in most cases, will) recieve arguments, in the form of values or variables defined in the last part of the function declaration.
     
