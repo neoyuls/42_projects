@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 20:31:57 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/29 12:18:12 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/07/30 13:40:03 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,16 @@ static char	**ft_allocate(char const *s, char c)
 	int		k;
 
 	i = 0;
-	j = 0;
 	k = 0;
 	sa = NULL;
 	while (s[i])
 	{
-		write (2, "Error\n", 6);
 		if (s[i] == c)
 		{
-			sa[j] = malloc(sizeof(char) * (k + 1));
+			sa = malloc(sizeof(char) * (k + 1));
+			// pretty stumped on how to allocate this
+			// keep getting seg faults
+			write (2, "Error\n", 6);
 			k = 0;
 			j++;
 		}
@@ -57,7 +58,6 @@ char	**ft_split(char const *s, char c)
 			i++;
 			j = 0;
 		}
-		s++;
 		j++;
 	}
 	return (sa);
