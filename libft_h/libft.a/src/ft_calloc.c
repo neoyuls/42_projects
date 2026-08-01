@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 04:17:55 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/27 12:45:37 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/08/01 13:00:02 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,9 @@ void	*ft_calloc(unsigned int n, unsigned int size)
 
 	i = 0;
 	ptr = malloc(size * n);
-	while (i < n)
-	{
-		ptr[i] = 0;
-		i++;
-	}
+	if (!ptr)
+		return (NULL);
+	ptr = ft_bzero(ptr, n);
 	if (n == 0)
 		*ptr = 0;
 	return (ptr);

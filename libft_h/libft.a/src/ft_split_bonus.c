@@ -6,23 +6,13 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 20:31:57 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/08/01 12:18:36 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/08/01 12:55:45 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <unistd.h>
+#include "libft.h"
 // bit scared of this one...
-
-static unsigned int	ft_strlen(char *s)
-{
-	unsigned int	i;
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
 static char	**fill(char **arr, const char *s, char c)
 {
 	unsigned int	i;
