@@ -6,16 +6,67 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 20:31:57 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/30 16:06:30 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/08/01 12:18:36 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 // bit scared of this one...
-static char	**ft_allocate(char const *s, char c)
+
+static unsigned int	ft_strlen(char *s)
 {
-	char	**sa;
+	unsigned int	i;
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+static char	**fill(char **arr, const char *s, char c)
+{
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	k;
+
+	i = 0;
+	j = 0;
+	k = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+		{
+			arr[j][k] = '\0';
+			k = 0;
+			j++;
+			arr[j][k] = c;
+		}
+		else
+			arr[j][k] = s[i];
+		i++;
+		k++;
+	}
+	return (arr);
+}
+static char	**allocate(const char *s, int ccount)
+{
+	int		i;
+	int		j;
+	char	**arr;
+
+	i = 0;
+	j = ft_strlen((char *)s);
+	arr = malloc(sizeof(char *) * (ccount + 1));
+	while (i <= (ccount + 1))
+	{
+		arr[i] = malloc(sizeof(char) * j);
+		i++;
+	}
+	return (arr);
+}
+char	**ft_split(const char *s, char c)
+{
+	char 	**strings;
 	int		i;
 	int		ccount;
 
@@ -24,10 +75,52 @@ static char	**ft_allocate(char const *s, char c)
 	while (s[i])
 	{
 		if (s[i] == c)
+		{
+			ccount++;
+		}
+		i++;
+	}
+	strings = allocate(s, ccount);
+	strings = fill(strings, s, c);
+	return (strings);
+}
+/* ATTEMPT 1, going to retry to build from 0
+static char	**ft_allocate(char const *s, char c)
+{
+	char	**sa;
+	int		i;
+	int		j;
+	int		k;
+	int		ccount;
+
+	i = 0;
+	j = 0;
+	k = 0;
+	ccount = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
 			ccount++;
 		i++;
 	}
-	sa = malloc(sizeof(*sa) * (ccount + 2));
+	sa = (char **)malloc((2 + ccount) * sizeof(char *));
+	if (sa == NULL)
+		return (NULL);
+	i = 0;
+	while (s[j])
+	{
+		k++;
+		if (s[j] == c)
+		{
+			sa[i] = (char *)malloc(sizeof(char) * (k + 1));
+			if (sa[i] == NULL)
+				return (NULL);
+			i++;
+			k = 0;
+		}
+		j++;
+	}
+	sa[i] = (char *)malloc(sizeof(char) * (k + 1));
 	return (sa);
 }
 
@@ -36,37 +129,46 @@ char	**ft_split(char const *s, char c)
 	char	**sa;
 	int		i;
 	int		j;
+	int		k;
 
 	i = 0;
 	j = 0;
+	k = 0;
 	sa = ft_allocate(s, c);
-	while (*s)
+	if (sa == NULL)
 	{
-		sa[i][j] = *s;
-		if (*s == c)
+		return (NULL);
+	}
+	while (s[k])
+	{
+		sa[i][j] = s[k];
+		if (s[k] == c)
 		{
 			sa[i][j] = '\0';
 			i++;
 			j = 0;
 		}
+		k++;
 		j++;
 	}
 	return (sa);
 }
-
+*/
 #include <stdio.h>
 
 int	main(int ac, char **av)
 {
 	if (ac != 3)
 	{
-		write (2, "Error\n", 6);
+		write (2, "error\n", 6);
 		return (1);
 	}
 	char	**sa = ft_split(av[1], av[2][0]);
+	printf("%s\n", sa[0]);
 	while (*sa)
 	{
 		printf("Result: %s\n", *sa);
+		write (1, "hi\n", 3);
 		sa++;
 	}
 	free(sa);
