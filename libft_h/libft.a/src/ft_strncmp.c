@@ -23,20 +23,3 @@ int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 	}
 	return (0);
 }
-// Ill do memcmp first then this one
-/*
-#include <string.h>
-#include <stdio.h>
-
-int	main(int ac, char **av)
-{
-	if (ac != 3)
-	{
-		printf("Error\n");
-		return 1;
-	}
-	printf("my function: %d\n", ft_strncmp(av[1], av[2], strlen(av[1])));
-	printf("string.h function: %d\n", strncmp(av[1], av[2], strlen(av[1])));
-	return 0;
-}
-*/

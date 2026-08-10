@@ -34,28 +34,3 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	dest[j + i] = '\0';
 	return (i + j);
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-
-int	main(int ac, char **av)
-{
-	if (ac != 4)
-		return (1);
-	if (atoi(av[3]) < 0)
-	{
-		write (2, "Error!\n", 7);
-		return (1);
-	}
-	unsigned int size = (unsigned int)atoi(av[3]);
-	char *dest = av[1];
-	char *src = av[2];
-	printf("my function: \n");
-	unsigned int r1 = ft_strlcat(dest, src, size);
-	printf("\tsource: %s\n", src);
-	printf("\tdest: %s\n", dest);
-	printf("\treturn: %d\n", r1);
-	return (0);
-}
-*/

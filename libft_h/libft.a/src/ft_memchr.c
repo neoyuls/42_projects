@@ -6,9 +6,11 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 01:32:18 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/27 01:57:28 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/08/03 13:47:24 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, unsigned int n)
 {
@@ -24,22 +26,3 @@ void	*ft_memchr(const void *s, int c, unsigned int n)
 	}
 	return ((void *)0);
 }
-// REVISIT AND TEST FURTHER LATER
-/*
-#include <unistd.h>
-#include <string.h>
-#include <stdlib.h>
-int	main(int ac, char **av)
-{
-	if (ac != 4)
-	{
-		write(2, "Error\n", 6);
-		return 1;
-	}
-	write(1, ft_memchr(av[1], atoi(av[2]), atoi(av[3])), 1);
-	write(1, "\n", 1);
-	write(1, memchr(av[1], atoi(av[2]), atoi(av[3])), 1);
-	write(1, "\n", 1);
-	return (0);
-}
-*/

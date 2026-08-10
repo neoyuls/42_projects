@@ -27,16 +27,3 @@ void	*ft_memmove(void *dest, const void *src, unsigned int n)
 	}
 	return (dest);
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
-int	main(int ac, char **av)
-{
-	if (ac != 3)
-		return 1;
-	char dest[20];
-	ft_memmove(dest, av[1], (unsigned int)atoi(av[2]));
-	printf("%s\n", dest);
-	return 0;
-}
-*/

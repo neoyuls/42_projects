@@ -27,24 +27,3 @@ void	*ft_memcpy(void *dest, const void *src, unsigned int n)
 	}
 	return (dest);
 }
-/*
-#include <unistd.h>
-
-int	main(void)
-{
-	char str[20] = "hola bb yo soy yuls";
-	char dest[20];
-	unsigned int off = 15;
-
-	write(1, "Before:", 7);
-	for (int i = 0; str[i]; i++)
-		write(1, &str[i], 1);
-	write(1, "\n", 1);
-	write(1, "After:", 6);
-	ft_memcpy(dest, str, off);
-	for (int j = 0; dest[j]; j++)
-		write(1, &dest[j], 1);
-	write(1, "\n", 1);
-	return (0);
-}
-*/

@@ -6,9 +6,11 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/21 14:36:33 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/21 17:20:51 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/08/03 12:44:25 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *nbr)
 {
@@ -36,21 +38,3 @@ int	ft_atoi(const char *nbr)
 	}
 	return (num * sign);
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
-
-//int	main(int ac, char **av)
-int	main(void)
-{
-//	if (ac != 2)
-//	return (1);
-//	int result = ft_atoi(av[1]);
-//	int r2 = atoi(av[1]);
-	int result = ft_atoi("\t\n\r-300");
-	int r2 = atoi("\t\n\r-300");
-	printf("\tft_atoi output \t= %d \n", result);
-	printf("\tstdlib atoi \t= %d \n", r2);
-	return 0;
-}
-*/

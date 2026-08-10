@@ -51,22 +51,3 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	joined[i] = '\0';
 	return (joined);
 }
-
-/* TESTING
-#include <unistd.h>
-#include <stdio.h>
-
-int	main(int ac, char **av)
-{
-	if (ac != 3)
-	{
-		write (2, "Error\n", 6);
-		return (1);
-	}
-	char *s = ft_strjoin(av[1], av[2]);
-	printf("for inputs: %s and %s\n", av[1], av[2]);
-	printf("result: %s\n", s);
-	free(s);
-	return (0);
-}
-*/

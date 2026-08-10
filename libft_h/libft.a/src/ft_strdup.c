@@ -32,24 +32,3 @@ char	*ft_strdup(const char *s)
 	str[i] = '\0';
 	return (str);
 }
-/*
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
-
-int	main(int ac, char **av)
-{
-	if (ac != 2)
-	{
-		write(2, "Error\n", 6);
-		return (1);
-	}
-	char *str = ft_strdup(av[1]);
-	printf("My function: %s\n", str);
-	char *str2 = strdup(av[1]);
-	printf("string.h function: %s\n", str2);
-	free(str);
-	free(str2);
-	return 0;
-}
-*/

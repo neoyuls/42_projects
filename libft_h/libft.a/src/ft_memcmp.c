@@ -6,9 +6,11 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 00:57:42 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/27 01:26:08 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/08/03 12:48:56 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, unsigned int n)
 {
@@ -29,20 +31,3 @@ int	ft_memcmp(const void *s1, const void *s2, unsigned int n)
 	}
 	return (0);
 }
-
-/*
-#include <string.h>
-#include <stdio.h>
-
-int	main(int ac, char **av)
-{
-	if (ac != 3)
-	{
-		printf("Error\n");
-		return 1;
-	}
-	printf("my function: %d\n", ft_memcmp(av[1], av[2], 0));
-	printf("string.h function: %d\n", memcmp(av[1], av[2], 0));
-	return 0;
-}
-*/

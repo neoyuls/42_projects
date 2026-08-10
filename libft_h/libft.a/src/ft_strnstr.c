@@ -37,18 +37,3 @@ char	*ft_strnstr(const char *big, const char *little, unsigned int n)
 	}
 	return ((void *)0);
 }
-/*
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-int	main(int ac, char **av)
-{
-	if (ac != 4)
-	{
-		write(2, "Error!\n", 7);
-		return 1;
-	}
-	printf("my function: %s\n", ft_strnstr(av[1], av[2], atoi(av[3])));
-}
-*/

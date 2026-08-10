@@ -29,18 +29,3 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)s);
 	return ((void *)0);
 }
-
-/*
-#include <stdio.h>
-int	main(int ac, char **av)
-{
-	if (ac < 2)
-	{
-		printf("ERROR");
-		return 1;
-	}
-	char c = *ft_strrchr(av[1], 65);
-	printf("found %c\n", c);
-	return 0;
-}
-*/

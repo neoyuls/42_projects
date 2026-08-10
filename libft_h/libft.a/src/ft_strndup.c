@@ -31,29 +31,3 @@ char	*ft_strndup(const char *s, unsigned int n)
 	new[i] = '\0';
 	return (new);
 }
-
-/* TESTING
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
-
-int	main(int ac, char **av)
-{
-	if (ac != 3)
-	{
-		write(1, "error!\n", 7);
-		return (1);
-	}
-
-	char	*mine;
-	char	*ref;
-
-	mine = ft_strndup(av[1], atoi(av[2]));
-	ref = strndup(av[1], atoi(av[2]));
-	printf("My function:		%s \n", mine);
-	printf("String.h function:	%s \n", ref);
-	free(mine);
-	free(ref);
-	return (0);
-}
-*/

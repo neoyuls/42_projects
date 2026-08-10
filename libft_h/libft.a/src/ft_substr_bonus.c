@@ -29,21 +29,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = '\0';
 	return (sub);
 }
-
-/* TESTING 
-#include <unistd.h>
-#include <stdio.h>
-
-int	main(int ac, char **av)
-{
-	if (ac != 4)
-	{
-		write(2, "Error\n", 6);
-		return (1);
-	}
-	char *str1 = ft_substr(av[1], (unsigned int)atoi(av[2]), (size_t)atoi(av[3]));
-	printf("original string: %s \n function result: %s\n", av[1], str1);
-	free(str1);
-	return (0);
-}
-*/
