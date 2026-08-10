@@ -6,13 +6,13 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 12:28:34 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/23 12:32:15 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/08/10 14:19:39 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	if (c < 65 && c > 90)
+	if (c < 65 || c > 90)
 		return (c);
 	else
 		c += 32;

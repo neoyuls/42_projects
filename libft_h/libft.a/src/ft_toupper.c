@@ -6,13 +6,13 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 12:28:34 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/23 12:30:50 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/08/10 14:19:29 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	if (c < 97 && c > 122)
+	if (c < 97 || c > 122)
 		return (c);
 	else
 		c -= 32;

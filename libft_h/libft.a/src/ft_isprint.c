@@ -6,13 +6,13 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 18:10:03 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/20 18:10:04 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/08/10 14:06:42 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 255)
+	if (c >= 32 && c <= 126)
 		return (1);
 	else
 		return (0);
