@@ -6,13 +6,24 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/11 19:02:11 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/09/11 19:28:01 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/09/12 21:23:36 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_count_if(char **tab, int (*f)(char *))
 {
 	int count;
+	int	i;
 
 	count = 0;
+	i = 0;
+	while (tab[i] != 0)
+	{
+		if (f(tab[i]) == 1)	
+		{
+			count++;
+		}
+		i++;
+	}
+	return (count);
 }
