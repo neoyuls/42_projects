@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 18:09:49 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/20 18:09:50 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/09/13 15:36:50 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 255)
+	if (c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);
