@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 // Oops, made the wrong function (lol)
 // will keep this here but will exclude from assignment repo

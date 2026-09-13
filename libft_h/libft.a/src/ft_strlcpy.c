@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 // UNFINISHED(?) I DONT LIKE THIS FUNCTION
 unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 {
