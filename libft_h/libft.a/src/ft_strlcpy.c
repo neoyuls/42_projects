@@ -6,13 +6,12 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 18:10:17 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/23 10:26:36 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/09/14 04:44:27 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// UNFINISHED(?) I DONT LIKE THIS FUNCTION
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;

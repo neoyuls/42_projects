@@ -6,12 +6,12 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 17:42:34 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/09/13 14:20:08 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/09/14 04:44:52 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// UNCLEAR IF DONE, REVISIT LATER
+
 void	ft_bzero(void *s, size_t n)
 {
 	if (n == 0)
