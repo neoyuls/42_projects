@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 04:03:36 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/09/13 23:59:00 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/09/14 02:30:08 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 void			ft_bzero(void *s, size_t n);
-void			*ft_calloc(unsigned int n, size_t size);
+void			*ft_calloc(size_t n, size_t size);
 void			*ft_memchr(const void *s, int c, size_t b);
 void			*ft_memcpy(void *dest, const void *src, size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t n);
@@ -35,10 +35,10 @@ void			*ft_memset(void *s, int c, size_t n);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strdup(const char *s);
 char			*ft_strnstr(const char *big, const char *little,
-					unsigned int n);
+					size_t n);
 char			*ft_strrchr(const char *s, int c);
-unsigned int	ft_strlcat(char *dest, char *src, size_t size);
-unsigned int	ft_strlcpy(char *dest, const char *src, size_t size);
-unsigned int	ft_strlen(char *s);
+size_t			ft_strlcat(char *dest, const char *src, size_t size);
+size_t			ft_strlcpy(char *dest, const char *src, size_t size);
+size_t			ft_strlen(const char *s);
 
 #endif

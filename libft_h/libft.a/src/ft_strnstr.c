@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 01:59:47 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/07/27 02:45:07 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/09/14 02:40:32 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t n)
 		j = 0;
 		if (big[i] == little[j])
 		{
-			while (big[i + j] == little[j])
+			while (big[i + j] == little[j] && i + j < n)
 			{
 				j++;
 			}
