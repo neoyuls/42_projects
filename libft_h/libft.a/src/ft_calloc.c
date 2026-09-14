@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
-void	*ft_calloc(unsigned int n, unsigned int size)
+void	*ft_calloc(size_t n, size_t size)
 {
 	unsigned char	*ptr;
 

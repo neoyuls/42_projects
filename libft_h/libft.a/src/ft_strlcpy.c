@@ -13,10 +13,10 @@
 #include "libft.h"
 
 // UNFINISHED(?) I DONT LIKE THIS FUNCTION
-unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
