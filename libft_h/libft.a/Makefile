@@ -24,7 +24,6 @@ SRCS = src/ft_atoi.c \
 	src/ft_strlcpy.c \
 	src/ft_strlen.c \
 	src/ft_strncmp.c \
-	src/ft_strndup.c \
 	src/ft_strnstr.c \
 	src/ft_strrchr.c \
 	src/ft_tolower.c \
