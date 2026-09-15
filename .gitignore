@@ -1,5 +1,7 @@
 a.out
-*.a
+libft.a
+.clangd
+.cache
 *.o
 libft.h/libft.a/tests/*
 nvim.log
