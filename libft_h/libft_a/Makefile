@@ -18,7 +18,6 @@ SRCS = src/ft_atoi.c \
 	src/ft_memcpy.c \
 	src/ft_memmove.c \
 	src/ft_memset.c \
-	src/ft_split.c \
 	src/ft_strchr.c \
 	src/ft_strdup.c \
 	src/ft_strjoin.c \
