@@ -17,7 +17,7 @@ int	main(int ac, char **av)
 	char **strarr = ft_split(av[1], av[2][0]);
 	while (av[1][i])
 	{
-		if (av[1][i] == av[2][0])
+		if (av[1][i - 1] == av[2][0])
 			i++;
 	}
 	for (int j = 0; j <= i; j++)

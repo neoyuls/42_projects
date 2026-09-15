@@ -6,37 +6,43 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 06:00:42 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/09/15 08:49:38 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/09/15 11:24:50 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	**allocate(char **strarr, char const *s, char c)
+char	**allocate(char **arr, char const *s, char c)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	k;
+	unsigned int i;
+	unsigned int j;
+	unsigned int k;
 
 	i = 0;
-	j = 0;
 	k = 0;
+	if (s[i] == '\0')
+	{
+		return (NULL);
+	}
+	if (s[i] == c)
+		i++;
 	while (s[i])
 	{
-		if (s[i] == c)
+		j = 0;
+		if (s[i - 1] == c && s[i] != c)
 		{
-			strarr[k] = malloc(sizeof(char) * (j + 1));
+			while (s[i + j] != c && s[i + j] != '\0')
+				j++;
+			arr[k] = malloc(sizeof(char) * (j + 1));
+			i = i + j;
 			k++;
-			j = 0;
 		}
 		i++;
-		j++;
 	}
-	strarr[k] = malloc(sizeof(char) * (j + 1));
-	return (strarr);
+	return (arr);
 }
 
-char	**fill(char **strarr, char const *s, char c)
+char	**fill(char **arr, char const *s, char c)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -47,18 +53,22 @@ char	**fill(char **strarr, char const *s, char c)
 	k = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		while (s[i] == c)
+			i++;
+		if (s[i] != c)
 		{
-			strarr[j][k] = '\0';
+			arr[j][k] = s[i];
+			i++;
+			k++;
+		}
+		if (s[i + 1] == c || s[i + 1] == '\0')
+		{
+			arr[j][k] = '\0';
 			j++;
 			k = 0;
 		}
-		strarr[j][k] = s[i];
-		i++;
-		k++;
 	}
-	strarr[j][k] = '\0';
-	return (strarr);
+	return (arr);
 }
 
 char	**ft_split(char const *s, char c)
@@ -69,9 +79,14 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	count = 0;
+	if (s[i] != c && s[i] != '\0')
+	{
+		i++;
+		count++;
+	}
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] != c && s[i - 1] == c)
 			count++;
 		i++;
 	}
