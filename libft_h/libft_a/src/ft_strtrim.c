@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 04:55:07 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/09/15 06:00:27 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/09/15 07:57:01 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ char	*fill(char const *s1, char const *set, char *trimmed)
 {
 	unsigned int	j;
 	unsigned int	k;
-	unsigned int	i;
 
 	k = 0;
 	while (*s1)
