@@ -6,7 +6,7 @@
 /*   By: neoyuls <jvernon@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/17 14:41:11 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/09/17 17:02:03 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/09/17 17:02:41 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ static unsigned int	count_len(int n)
 	len = 1;
 	tmp = (unsigned int)n;
 	if (n < 0)
-	{
 		len++;
-	}
 	while (tmp > 0)
 	{
 		tmp = tmp / 10;

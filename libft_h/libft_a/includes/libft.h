@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 04:03:36 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/09/17 15:37:05 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/09/17 22:47:45 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ char			*ft_strchr(const char *s, int c);
 char			*ft_strdup(const char *s);
 char			*ft_strnstr(const char *big, const char *little,
 					size_t n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			*ft_strrchr(const char *s, int c);
 char			**ft_split(char const *s, char c);
 size_t			ft_strlcat(char *dest, const char *src, size_t size);

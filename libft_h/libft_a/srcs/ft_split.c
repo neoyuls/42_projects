@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 06:00:42 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/09/17 11:53:22 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/09/17 23:18:33 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static unsigned int	count_words(char const *s, char c)
 {
-	unsigned int count; 
-	unsigned int i; 
+	unsigned int	count;
+	unsigned int	i;
 
 	i = 0;
 	count = 0;
