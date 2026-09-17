@@ -13,6 +13,7 @@ SRCS = srcs/ft_atoi.c \
 	srcs/ft_isascii.c \
 	srcs/ft_isdigit.c \
 	srcs/ft_isprint.c \
+	srcs/ft_itoa.c \
 	srcs/ft_memchr.c \
 	srcs/ft_memcmp.c \
 	srcs/ft_memcpy.c \
