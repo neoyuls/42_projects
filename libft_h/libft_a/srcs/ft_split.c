@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 06:00:42 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/09/16 16:08:39 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/09/17 11:53:22 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static unsigned int	count_words(char const *s, char c)
 	count = 0;
 	if (s[i] != c && s[i] != '\0')
 	{
-		i++;
 		count++;
+		i++;
 	}
 	while (s[i])
 	{
@@ -43,16 +43,16 @@ static char	**substrings(char **arr, char const *s, char c)
 	k = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		while (s[i] == c)
 			i++;
-		if (s[i] != c)
+		if (s[i] != c && s[i] != '\0')
 		{
 			j = 0;
-			while (s[i + j] != c || s[i + j] == '\0')
+			while (s[i + j] != c && s[i + j] != '\0')
 				j++;
-			arr[k] = ft_substr(s, i, j - 1);
+			arr[k] = ft_substr(s, i, j);
 			k++;
-			i += j - 1;
+			i += j;
 		}
 	}
 	arr[k] = NULL;
