@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 05:09:38 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/09/15 12:31:10 by neoyuls          ###   ########.fr       */
+/*   Updated: 2026/09/15 13:10:25 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (i < start)
 		return (NULL);
 	substr = allocate(i, start, len);
+	if (!substr)
+		return (NULL);
 	i = 0;
 	while (i < len && s[start + i])
 	{

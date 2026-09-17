@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/15 06:00:42 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/09/15 12:32:18 by neoyuls          ###   ########.fr       */
+/*   Created: 2026/07/27 04:17:55 by neoyuls           #+#    #+#             */
+/*   Updated: 2026/09/15 12:42:53 by neoyuls          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-static char	*allocate(char **arr, char const *s, char c)
+void	*ft_calloc(size_t n, size_t size)
 {
-}
+	unsigned char	*ptr;
 
-char	**ft_split(char const *s, char c)
-{
-	unsigned int	i;
-	unsigned int	count;
-	char			**strarr;
-
-	i = 0;
-	count = 0;
-	if (s[i] != c && s[i] != '\0')
-	{
-		i++;
-		count++;
-	}
-	while (s[i])
-	{
-		if (s[i] != c && s[i - 1] == c)
-			count++;
-		i++;
-	}
-	allocate(strarr, s, c);
-	return (strarr);
+	if (n == 0 || size == 0)
+		return (malloc(0));
+	if (n > ((size_t)-1) / size)
+		return (NULL);
+	ptr = malloc(size * n);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, size * n);
+	return (ptr);
 }
