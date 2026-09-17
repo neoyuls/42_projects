@@ -6,7 +6,7 @@
 /*   By: neoyuls <jvernon@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/17 14:41:11 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/09/17 17:02:41 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/09/18 00:56:02 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,18 @@ static unsigned int	count_len(int n)
 	unsigned int	tmp;
 	unsigned int	len;
 
-	len = 1;
-	tmp = (unsigned int)n;
+	len = 0;
+	tmp = n;
+	if (n == 0)
+		return (1);
 	if (n < 0)
+	{
+		tmp = -tmp;
 		len++;
+	}
 	while (tmp > 0)
 	{
-		tmp = tmp / 10;
+		tmp /= 10;
 		len++;
 	}
 	return (len);
@@ -34,13 +39,11 @@ static void	fill_str(int n, unsigned int len, char *str)
 	unsigned int	tmp;
 
 	tmp = n;
+	tmp = -tmp;
 	str[len] = '\0';
 	len--;
 	if (n < 0)
-	{
 		str[0] = '-';
-		tmp = -tmp;
-	}
 	while (tmp > 0)
 	{
 		str[len] = (tmp % 10) + '0';

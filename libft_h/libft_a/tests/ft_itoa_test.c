@@ -15,6 +15,11 @@ int	main(void)
 	write(1, "\n", 1);
 	free(nbr);
 
+	nbr = ft_itoa(-5);
+	write(1, nbr, ft_strlen(nbr));
+	write(1, "\n", 1);
+	free(nbr);
+
 	nbr = ft_itoa(-200);
 	write(1, nbr, ft_strlen(nbr));
 	write(1, "\n", 1);
