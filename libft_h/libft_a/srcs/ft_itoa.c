@@ -6,7 +6,7 @@
 /*   By: neoyuls <jvernon@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/17 14:41:11 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/09/18 00:56:02 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/09/18 00:57:45 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ static void	fill_str(int n, unsigned int len, char *str)
 	unsigned int	tmp;
 
 	tmp = n;
-	tmp = -tmp;
+	if (n < 0)
+		tmp = -tmp;
 	str[len] = '\0';
 	len--;
 	if (n < 0)
