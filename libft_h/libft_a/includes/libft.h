@@ -6,7 +6,7 @@
 /*   By: neoyuls <neoyuls@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 04:03:36 by neoyuls           #+#    #+#             */
-/*   Updated: 2026/09/19 13:04:31 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/09/19 15:18:38 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ void			*ft_memcpy(void *dest, const void *src, size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_putchar_fd(char c, int fd);
+void			ft_putendl_fd(char *s, int fd);
 void			ft_putstr_fd(char *s, int fd);
+void			ft_putnbr_fd(int n, int fd);
 char			*ft_itoa(int n);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strtrim(char const *s1, char const *set);
