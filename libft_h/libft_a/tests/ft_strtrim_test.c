@@ -1,5 +1,4 @@
 #include "libft.h"
-#include <stdio.h>
 
 int	main(int ac, char **av)
 {
@@ -9,8 +8,6 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	char *trimmed = ft_strtrim(av[1], av[2]);
-	/*
-	printf("Got here!\n");
 	write (1, "input:\n", 7);
 	write(1, av[1], ft_strlen(av[1]));
 	write(1, "\n", 1);
@@ -19,8 +16,6 @@ int	main(int ac, char **av)
 	write(1, "\n", 1);
 	write(1, "Output:\n", 9);
 	write(1, trimmed, ft_strlen(trimmed));
-	*/
-	printf("Trimmed string: \"%s\"\n", trimmed);
 	free(trimmed);
 	return(0);
 }
