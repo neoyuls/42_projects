@@ -6,7 +6,7 @@
 /*   By: jvernon <jvernon@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 09:42:40 by jvernon           #+#    #+#             */
-/*   Updated: 2026/09/19 09:45:52 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/09/20 21:18:42 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void ft_striteri(char *s, void (*f)(unsigned int, char*))
 	i = 0;
 	while (s[i])
 	{
-		f(i, s);
+		f(i, s + i);
 		i++;
 	}
 }
