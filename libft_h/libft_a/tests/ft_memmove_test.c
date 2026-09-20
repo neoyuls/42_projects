@@ -1,16 +1,16 @@
-# include "libft.h"
-# include <stdio.h>
-# include <string.h>
+#include <string.h>
+#include <stdio.h>
+#include <unistd.h>
+#include "libft.h"
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	if (ac != 3)
+	if (ac != 4)
 	{
-		write (2, "Error!\n", 6);
-		return (2);
+		write(2, "Enter 3 parameters\n", 18);
 	}
-
-	printf("my function:		%s\n", (char *)ft_memmove(av[1] + 2, av[1], atoi(av[2])));
-	printf("string.h function:	%s\n", (char *)memmove(av[1] + 2, av[1], atoi(av[2])));
+	printf("Original string: %s\n", av[1]);
+	ft_memmove(av[1] + atoi(av[2]), av[1], atoi(av[3]));
+	printf("memmove(string.h) output: %s\n", av[1]);
 	return 0;
 }
