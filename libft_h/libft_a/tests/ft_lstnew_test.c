@@ -1,23 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstnew_test.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvernon <jvernon@student.42malaga.com>     +#+  +:+       +#+        */
+/*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/20 21:56:52 by jvernon           #+#    #+#             */
-/*   Updated: 2026/09/21 13:12:59 by jvernon          ###   ########.fr       */
+/*   Created: 2026/09/21 12:41:34 by jvernon           #+#    #+#             */
+/*   Updated: 2026/09/21 13:12:47 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 
-t_list	ft_lstnew(void *content)
-{
-	struct	s_list 	node;
-
-	node = malloc(sizeof(t_list);
-	node.content = content;
-	node.next = NULL 
-	return(node);
-}

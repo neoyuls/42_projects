@@ -40,7 +40,7 @@ SRCS = srcs/ft_atoi.c \
         srcs/ft_tolower.c \
         srcs/ft_toupper.c
 
-BONUS = srcs/ft_lstnew_bonus.c
+BONUS_SRCS = srcs/ft_lstnew_bonus.c
 
 OBJS = $(SRCS:.c=.o)
 BOBJS = $(BONUS:.c=.o)
