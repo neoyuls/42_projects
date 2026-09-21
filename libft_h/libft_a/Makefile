@@ -40,7 +40,10 @@ SRCS = srcs/ft_atoi.c \
         srcs/ft_tolower.c \
         srcs/ft_toupper.c
 
+BONUS = srcs/ft_lstnew_bonus.c
+
 OBJS = $(SRCS:.c=.o)
+BOBJS = $(BONUS:.c=.o)
 
 # Compilation rules
 
@@ -53,6 +56,8 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
+
+bonus: $(NAME) $(BONUS)
 
 clean:
 	rm -f $(OBJS)
