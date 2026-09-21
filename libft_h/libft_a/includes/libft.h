@@ -6,7 +6,7 @@
 /*   By: jvernon <jvernon@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 04:03:36 by jvernon           #+#    #+#             */
-/*   Updated: 2026/09/21 11:57:33 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/09/21 14:51:37 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_lstadd_fron(t_list **lst, t_list *new);
 t_list	ft_lstnew(void *content);
 
 #endif

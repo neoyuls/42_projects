@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_test.c                                   :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
+/*   By: jvernon <jvernon@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/21 12:41:34 by jvernon           #+#    #+#             */
-/*   Updated: 2026/09/21 15:33:56 by jvernon          ###   ########.fr       */
+/*   Created: 2026/09/22 00:37:06 by jvernon           #+#    #+#             */
+/*   Updated: 2026/09/22 00:38:41 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	main(int ac, char **av)
+unsigned int	ft_lstsize(t_list *lst)
 {
-	
+	unsigned int	size;
+
+	if (!lst)
+		return (NULL);
+	size = 0;
+	while(!*lst->next != NULL)
+	{
+		lst++;
+		size++;
+	}
+	return (size);
 }
