@@ -6,13 +6,13 @@
 /*   By: jvernon <jvernon@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/22 00:37:25 by jvernon           #+#    #+#             */
-/*   Updated: 2026/09/22 00:38:24 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/09/22 05:09:41 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 t_list *ft_lstlast(t_list *lst)
 {
-	while (*lst->next != NULL)
-		lst++;
+	while (lst->next)
+		lst = lst->next;
 	return (lst);
 }

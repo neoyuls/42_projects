@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_1stdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvernon <jvernon@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/22 00:43:56 by jvernon           #+#    #+#             */
-/*   Updated: 2026/09/22 00:47:13 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/09/22 05:15:09 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_lstaddd_back(t_list **lst, t_list *new)
+void	del(void *content)
 {
-	while (*lst->next != NULL)
-		lst++;
-	*lst->next = new
+	free(content);
+}
+
+void	ft_1stdelone(t_list *lst, void (*del)(void *))
+{
+	del(lst->content);
 }
