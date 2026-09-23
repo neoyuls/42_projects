@@ -2,26 +2,10 @@
 /*                                                                            */
 /*   count_word_test.c                                                        */
 /*                                                                            */
-/*   Unit test for the counting pass of ft_split. The point is to test the    */
-/*   word-counting loop ON ITS OWN, on a table of inputs, before trusting it  */
-/*   inside ft_split. A number on a screen beats a guess.                     */
 /*                                                                            */
-/*   Build and run (no libft needed, this file is self-contained):            */
+/*   harness for figuring out the logic behind the word count in ft_split     */
 /*                                                                            */
-/*     cc -Wall -Wextra -Werror -g tests/count_word_test.c -o /tmp/cwt        */
-/*     /tmp/cwt                                                               */
 /*                                                                            */
-/*   Run it AGAIN with AddressSanitizer. The table only tells you whether the */
-/*   answers are right; ASan tells you whether you read memory you do not     */
-/*   own, which the table can never show you:                                 */
-/*                                                                            */
-/*     cc -Wall -Wextra -Werror -g -fsanitize=address \                       */
-/*        tests/count_word_test.c -o /tmp/cwt_asan                            */
-/*     /tmp/cwt_asan                                                          */
-/*                                                                            */
-/*   Note: ASan aborts the process on the first invalid read, so the empty    */
-/*   string case is deliberately LAST in the table - that way you still see   */
-/*   the rest of the results before it dies.                                  */
 /*                                                                            */
 /* ************************************************************************** */
 

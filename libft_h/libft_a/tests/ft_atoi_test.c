@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*   ft_atoi_test.c                                                           */
+/*                                                                            */
+/*                                                                            */
+/*   Harness for ft_atoi: compares it with libc atoi on one argument.         */
+/*                                                                            */
+/*                                                                            */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "libft.h"
 # include <stdlib.h>
 # include <unistd.h>

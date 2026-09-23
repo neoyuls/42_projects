@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*   ft_memmove_test.c                                                        */
+/*                                                                            */
+/*                                                                            */
+/*   Harness for ft_memmove on overlapping regions of a command-line buffer.  */
+/*                                                                            */
+/*                                                                            */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <string.h>
 #include <stdio.h>
 #include <unistd.h>

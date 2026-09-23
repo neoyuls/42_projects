@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*   ft_strjoin_test.c                                                        */
+/*                                                                            */
+/*                                                                            */
+/*   Harness for ft_strjoin: prints both inputs and their concatenation.      */
+/*                                                                            */
+/*                                                                            */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	main(int ac, char **av)

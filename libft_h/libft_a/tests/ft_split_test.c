@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*   ft_split_test.c                                                          */
+/*                                                                            */
+/*                                                                            */
+/*   Harness for ft_split: prints every word for a string and delimiter.      */
+/*                                                                            */
+/*                                                                            */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static unsigned int	count_words(char const *s, char c)

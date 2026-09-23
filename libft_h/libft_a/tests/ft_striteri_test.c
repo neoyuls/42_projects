@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*   ft_striteri_test.c                                                       */
+/*                                                                            */
+/*                                                                            */
+/*   Harness for ft_striteri: applies an index-adding iterator to a string.   */
+/*                                                                            */
+/*                                                                            */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	iter(unsigned int i, char* s)

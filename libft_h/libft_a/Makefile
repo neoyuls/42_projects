@@ -46,7 +46,6 @@ SRCS = srcs/ft_atoi.c \
         srcs/ft_tolower.c \
         srcs/ft_toupper.c
 
-
 OBJS_DIR = objs
 OBJS = $(SRCS:srcs/%.c=$(OBJS_DIR)/%.o)
 
