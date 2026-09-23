@@ -7,7 +7,13 @@ This project consists of a library of various utility functions written in the C
 
 ## Instructions
 
- The library is compiled into object files(`.o`) and an archive(`libft.a`) file through the GNU make command, which derives it's instructions from `Makefile`. This makefile consists firstly of the setting of variables, including the name of the compiled binary, an alias for the compiler to be used, flags for the compiler to be used, paths to the source files, and destinations for compiled object files. After setting the variables, the makefile establishes the rules the compiler will follow, 
+ The library is compiled into object files(`.o`) and an archive(`libft.a`) file through the GNU make command, which derives it's instructions from `Makefile`. This makefile consists firstly of the setting of variables, including the name of the compiled binary, an alias for the compiler to be used, flags for the compiler to be used, paths to the source files, and destinations for compiled object files. After setting the variables, the makefile establishes the rules the compiler will follow upon invocation of `make`.
+
+After compilation, in order to use the library's functions, compilation must follow this format
+```sh
+cc [flags] [path/to/targets] [path/to/libft.a] [other parameters such as -o]
+```
+It is important to note that the order of compiler targets does matter. During compilation, the linker reads input once, **left to right**, saving *undefined symbols* (in this case referring to the functions in libft.h)
 
 ## Resources
 

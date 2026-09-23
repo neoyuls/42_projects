@@ -6,3 +6,4 @@ libft.a
 *.o
 libft.h/libft.a/tests/*
 nvim.log
+.env*
