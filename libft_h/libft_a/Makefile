@@ -1,5 +1,3 @@
-# 1. set variables
-
 NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -52,20 +50,14 @@ SRCS = srcs/ft_atoi.c \
 OBJS_DIR = objs
 OBJS = $(SRCS:srcs/%.c=$(OBJS_DIR)/%.o)
 
-# Compilation rules
-
 $(OBJS_DIR)/%.o: srcs/%.c
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
-
-# Targets
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
-
-bonus: $(NAME) $(BONUS)
 
 clean:
 	rm -rf $(OBJS_DIR)
