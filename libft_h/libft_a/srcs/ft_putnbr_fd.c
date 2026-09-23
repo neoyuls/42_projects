@@ -28,7 +28,7 @@ void	ft_putnbr_fd(int n, int fd)
 		tmp = tmp % 10 + '0';
 		write(fd, &tmp, 1);
 	}
-	else 
+	else
 	{
 		tmp += '0';
 		write(fd, &tmp, 1);

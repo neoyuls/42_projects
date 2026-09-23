@@ -6,7 +6,7 @@
 /*   By: jvernon <jvernon@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 04:12:44 by jvernon           #+#    #+#             */
-/*   Updated: 2026/09/23 06:05:47 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/09/23 06:49:03 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,14 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*node;
 	t_list	*nxt;
 
-	if (!lst || !(*lst))
+	if (!lst || !(*lst) || !del)
 		return ;
 	nxt = *lst;
-	while (nxt->next)
+	while (nxt)
 	{
-		node = nxt;
-		del(node->content);
-		nxt = nxt->next;
-		free(node);
+		node = nxt->next;
+		ft_lstdelone(nxt,del);
+		nxt = node;
 	}
-	free(nxt);
 	*lst = NULL;
 }

@@ -16,8 +16,10 @@ SRCS = srcs/ft_atoi.c \
         srcs/ft_itoa.c \
 		srcs/ft_lstadd_back.c \
 		srcs/ft_lstadd_front.c \
+		srcs/ft_lstclear.c \
 		srcs/ft_lstdelone.c \
 		srcs/ft_lstlast.c \
+		srcs/ft_lstmap.c \
 		srcs/ft_lstnew.c \
 		srcs/ft_lstsize.c \
         srcs/ft_memchr.c \
