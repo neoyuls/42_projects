@@ -14,6 +14,12 @@ SRCS = srcs/ft_atoi.c \
         srcs/ft_isdigit.c \
         srcs/ft_isprint.c \
         srcs/ft_itoa.c \
+		srcs/ft_lstadd_back.c \
+		srcs/ft_lstadd_front.c \
+		srcs/ft_lstdelone.c \
+		srcs/ft_lstlast.c \
+		srcs/ft_lstnew.c \
+		srcs/ft_lstsize.c \
         srcs/ft_memchr.c \
         srcs/ft_memcmp.c \
         srcs/ft_memcpy.c \
@@ -40,14 +46,14 @@ SRCS = srcs/ft_atoi.c \
         srcs/ft_tolower.c \
         srcs/ft_toupper.c
 
-BONUS_SRCS = srcs/ft_lstnew_bonus.c
 
-OBJS = $(SRCS:.c=.o)
-BOBJS = $(BONUS:.c=.o)
+OBJS_DIR = objs
+OBJS = $(SRCS:srcs/%.c=$(OBJS_DIR)/%.o)
 
 # Compilation rules
 
-%.o: %.c
+$(OBJS_DIR)/%.o: srcs/%.c
+	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 # Targets
@@ -60,7 +66,7 @@ $(NAME): $(OBJS)
 bonus: $(NAME) $(BONUS)
 
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJS_DIR)
 
 fclean: clean
 	rm -f $(NAME)
