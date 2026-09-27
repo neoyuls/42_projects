@@ -30,7 +30,6 @@ int	main(int ac, char **av)
 		i++;
 	}
 	write(1, "\n", 1);
-	write(1, "\n", 1);
 	ft_striteri(av[1], iter);
 	i = 0;
 	while (av[1][i])

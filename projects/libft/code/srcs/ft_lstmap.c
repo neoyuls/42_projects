@@ -6,7 +6,7 @@
 /*   By: jvernon <jvernon@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 07:02:50 by jvernon           #+#    #+#             */
-/*   Updated: 2026/09/23 07:51:55 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/09/27 11:05:30 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*node;
 	void	*buf;
 
-	if (!lst || !f || !del)
+	if (!lst || !f)
 		return (NULL);
 	first = NULL;
 	while (lst)

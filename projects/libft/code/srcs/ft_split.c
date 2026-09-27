@@ -6,7 +6,7 @@
 /*   By: jvernon <jvernon@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 06:00:42 by jvernon           #+#    #+#             */
-/*   Updated: 2026/09/27 10:11:04 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/09/27 10:28:59 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static char	**substrings(char **arr, char const *s, char c)
 				j++;
 			arr[k] = ft_substr(s, i, j);
 			if (!arr[k])
-				return(if_fail(arr, k));
+				return (if_fail(arr, k));
 			k++;
 			i += j;
 		}
