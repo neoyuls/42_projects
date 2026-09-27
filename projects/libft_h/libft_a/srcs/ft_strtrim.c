@@ -29,7 +29,7 @@ static int	check_chars(char const c, char const *set)
 static char	*fill(char const *s1, char const *set)
 {
 	unsigned int	i;
-	unsigned int	j;
+	size_t			j;
 	char			*trimmed;
 
 	i = 0;

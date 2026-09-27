@@ -18,7 +18,7 @@ static unsigned int	count_len(int n)
 	unsigned int	len;
 
 	len = 0;
-	tmp = n;
+	tmp = (unsigned int)n;
 	if (n == 0)
 		return (1);
 	if (n < 0)
@@ -38,7 +38,7 @@ static void	fill_str(int n, unsigned int len, char *str)
 {
 	unsigned int	tmp;
 
-	tmp = n;
+	tmp = (unsigned int)n;
 	if (n < 0)
 		tmp = -tmp;
 	str[len] = '\0';

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static	char	*allocate(unsigned int n, unsigned int start, size_t len)
+static	char	*allocate(size_t n, unsigned int start, size_t len)
 {
 	char	*substr;
 
@@ -26,7 +26,7 @@ static	char	*allocate(unsigned int n, unsigned int start, size_t len)
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*substr;
-	unsigned int	i;
+	size_t			i;
 
 	i = ft_strlen(s);
 	if (i < start)

@@ -6,7 +6,7 @@
 /*   By: jvernon <jvernon@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 06:00:42 by jvernon           #+#    #+#             */
-/*   Updated: 2026/09/17 23:18:33 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/09/27 10:11:04 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,17 @@ static unsigned int	count_words(char const *s, char c)
 	return (count);
 }
 
+static char	**if_fail(char **arr, unsigned int count)
+{
+	while (count > 0)
+	{
+		count--;
+		free(arr[count]);
+	}
+	free(arr);
+	return (NULL);
+}
+
 static char	**substrings(char **arr, char const *s, char c)
 {
 	unsigned int	i;
@@ -51,6 +62,8 @@ static char	**substrings(char **arr, char const *s, char c)
 			while (s[i + j] != c && s[i + j] != '\0')
 				j++;
 			arr[k] = ft_substr(s, i, j);
+			if (!arr[k])
+				return(if_fail(arr, k));
 			k++;
 			i += j;
 		}
@@ -64,6 +77,8 @@ char	**ft_split(char const *s, char c)
 	unsigned int	count;
 	char			**arr;
 
+	if (!s)
+		return (NULL);
 	count = count_words(s, c);
 	arr = malloc(sizeof(char *) * (count + 1));
 	if (!arr)
