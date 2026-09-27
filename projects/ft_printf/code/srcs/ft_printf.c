@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvernon <jvernon@student.42malaga.com>     +#+  +:+       +#+        */
+/*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/22 00:37:25 by jvernon           #+#    #+#             */
-/*   Updated: 2026/09/27 09:27:34 by jvernon          ###   ########.fr       */
+/*   Created: 2026/09/27 07:21:20 by jvernon           #+#    #+#             */
+/*   Updated: 2026/09/27 09:14:47 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
 
-t_list	*ft_lstlast(t_list *lst)
+int	ft_printf(const char *format, ...)
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	size_t	len;
+	size_t	count;
+
+	len = -1;
+	count = 0;
+	while (++len)
+		if (format[len] == '%')
+			count++;
+
 }

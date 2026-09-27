@@ -7,3 +7,4 @@ libft.a
 libft.h/libft.a/tests/*
 nvim.log
 .env*
+.*.swp
