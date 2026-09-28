@@ -6,7 +6,7 @@
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 08:03:51 by jvernon           #+#    #+#             */
-/*   Updated: 2026/09/27 08:46:37 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/09/27 11:28:33 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 typedef struct s_vars
 {
+
 }				t_vars;
 
 typedef struct s_counters
