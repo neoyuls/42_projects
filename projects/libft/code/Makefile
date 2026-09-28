@@ -1,7 +1,10 @@
 NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
+<<<<<<< HEAD
 HEADER = libft.h
+=======
+>>>>>>> refs/remotes/origin/main
 
 SRCS = ft_atoi.c \
         ft_bzero.c \
@@ -50,7 +53,11 @@ SRCS = ft_atoi.c \
 OBJS_DIR = objs
 OBJS = $(SRCS:%.c=$(OBJS_DIR)/%.o)
 
+<<<<<<< HEAD
 $(OBJS_DIR)/%.o: %.c $(HEADER)
+=======
+$(OBJS_DIR)/%.o: %.c
+>>>>>>> refs/remotes/origin/main
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
