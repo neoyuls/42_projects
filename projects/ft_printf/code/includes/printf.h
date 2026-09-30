@@ -6,32 +6,18 @@
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 08:03:51 by jvernon           #+#    #+#             */
-/*   Updated: 2026/09/27 11:28:33 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/09/30 15:16:51 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRINTF_H
 # define PRINTF_H
 
-# include "libft.h"
 # include <stdarg.h>
-
-typedef struct s_vars
-{
-
-}				t_vars;
-
-typedef struct s_counters
-{
-	int			i;
-	int			j;
-	int			k;
-	int			l;
-}				t_counters;
 
 void	print_number(int nb);
 void	print_unsigned(unsigned int nb);
-void	print_numbase(int nb);
+void	print_numbase(int nb, char *base);
 
 int		ft_printf(const char *format, ...);
 
