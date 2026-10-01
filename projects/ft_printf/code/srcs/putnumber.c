@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   putstring.c                                        :+:      :+:    :+:   */
+/*   putnumber.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/30 15:17:43 by jvernon           #+#    #+#             */
-/*   Updated: 2026/09/30 17:38:29 by jvernon          ###   ########.fr       */
+/*   Created: 2026/09/30 17:38:42 by jvernon           #+#    #+#             */
+/*   Updated: 2026/09/30 17:47:01 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	putstring(char *s)
+int	putnumber(int nbr)
 {
-	unsigned int	i;
+	long	nb;
+	int		len;
 
-	i = -1;
-	while (s[i++])
-		write(1, &s[i], 1);
-	return (i);
+	nb = nbr;
+	len = 0;
+	if (nbr < 0)
+	{
+		write (1, "-", 1);
+		nb = -nb;
+	}
+	if (tmp >= 10)
+	{
+		putnumber((int)(nb / 10));
+		nb = nb % 10 + '0';
+		write(1, &nb, 1);
+	}
+	else
+	{
+		nb += '0';
+		write(1, &nb, 1);
+	}
+	return (len);
 }
