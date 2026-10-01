@@ -6,7 +6,7 @@
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 23:36:06 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/02 00:01:39 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/02 00:17:05 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,42 +28,18 @@ unsigned int	putchar_return(char c)
 	return ((unsigned int)write (1, &c, 1));
 }
 
-unsigned int	count_len(long n)
-{
-	long	tmp;
-	unsigned int	len;
-
-	len = 0;
-	tmp = n;
-	if (n == 0)
-		return (1);
-	if (tmp < 0)
-	{
-		tmp = -tmp;
-		len++;
-	}
-	while (tmp > 0)
-	{
-		tmp /= 10;
-		len++;
-	}
-	return (len);
-}
-
 unsigned int	putnumber(long nbr, char *base)
 {
 	unsigned int	baselen;
-	unsigned int	i;
-	char 			arr[13];
+	unsigned int	printed;
 
-	i = -1;
 	baselen = ft_strlen(base);
+	printed = 0;
 	if (nbr < 0)
 	{
 		if (baselen == 10)
 		{
-			arr[i++] = '-';
-//			len += putchar_return('-');
+			printed += putchar_return('-');
 			nbr = -nbr;
 		}
 		else
@@ -71,11 +47,12 @@ unsigned int	putnumber(long nbr, char *base)
 	}
 	if (nbr >= baselen)
 	{
-		putnumber((nbr / baselen), base);
-		putchar_return(base[nbr %  baselen]);
+		printed += putnumber((nbr / baselen), base);
+		printed += putchar_return(base[nbr %  baselen]);
 	}
-	putchar_return(base[nbr %  baselen]);
-	return (/*idk bro */);
+	else
+		printed += putchar_return(base[nbr %  baselen]);
+	return (printed);
 }
 
 //TESTING HARNESS, DELETE OR COMMENT OUT LATER
