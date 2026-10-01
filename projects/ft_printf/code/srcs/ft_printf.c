@@ -6,7 +6,7 @@
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 07:21:20 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/01 13:49:52 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/01 14:30:41 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	check_arg(char c, va_list ap)
 	if (c == 'd' || c == 'i')
 		return (putnumber(va_arg(ap, int), "0123456789", 0));
 	if (c == 'u')
-		return (putnumber(va_arg(ap, unsigned int), "0123456789", 0));
+		return ((int)putnumber(va_arg(ap, unsigned int), "0123456789", 0));
 	if (c == 'x')
 		return (putnumber(va_arg(ap, int), "0123456789abcdef", 0));
 	if (c == 'X')

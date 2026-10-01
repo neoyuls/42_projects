@@ -6,7 +6,7 @@
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 08:03:51 by jvernon           #+#    #+#             */
-/*   Updated: 2026/09/30 17:37:16 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/01 14:01:30 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 # define PRINTF_H
 
 # include <stdarg.h>
+# include <unistd.h>
 
 int		ft_printf(const char *format, ...);
 int		putstring(char *s);
 int		putptr(void *p);
 int		putcharacter(int);
-int		putnumber(int nb);
+unsigned int	putnumber(int nb, char *base, unsigned int len);
 int		putunsigned(unsigned int nbr);
 int		puthexlower(int nbr);
 int		puthexupper(int nbr);
