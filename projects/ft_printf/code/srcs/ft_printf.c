@@ -6,7 +6,7 @@
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 07:21:20 by jvernon           #+#    #+#             */
-/*   Updated: 2026/09/30 17:48:24 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/01 13:49:52 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,21 @@
 int	check_arg(char c, va_list ap)
 {
 	if (c == 'c')
-	{
-		va_arg(ap, int);
-		return (1);
-	}
+		return ((int)write(1, &c, 1));
 	if (c == 's')
 		return (putstring(va_arg(ap, char *)));
 	if (c == 'p')
 		return (putptr(va_arg(ap, void *)));
 	if (c == 'd' || c == 'i')
-	{
-		putnumber(va_arg(ap, int))
-		return (count_len(va_arg(ap, int)));
-	}
+		return (putnumber(va_arg(ap, int), "0123456789", 0));
 	if (c == 'u')
-		return (putunsigned(va_arg(ap, unsigned int)));
+		return (putnumber(va_arg(ap, unsigned int), "0123456789", 0));
 	if (c == 'x')
-		return (puthexlower(va_arg(ap, char *)));
+		return (putnumber(va_arg(ap, int), "0123456789abcdef", 0));
 	if (c == 'X')
-		return (puthexupper(va_arg(ap, char *)));
+		return (putnumber(va_arg(ap, int), "0123456789ABCDEF", 0));
 	if (c == '%')
-		return ((int)write(1, "%", 1));
+		return ((int)write(1, &c, 1));
 }
 
 int	ft_printf(const char *format, ...)
