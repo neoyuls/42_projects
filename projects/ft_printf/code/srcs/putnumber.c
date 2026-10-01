@@ -6,7 +6,7 @@
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/30 number:38:42 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/01 14:29:34 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/01 15:46:37 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,30 +31,31 @@ unsigned int	putnumber(int nbr, char *base, unsigned int len)
 	if (nbr == 0)
 		return ((unsigned int)write(1, "0", 1));
 	nb = nbr;
-	if (nbr < 0 && baselen == 10)
+	if (nbr < 0 && baselen == 10) // how do I handle other bases?
 	{
 		nb = -nb;
 		len += (unsigned int)write(1, "-", 1);
 	}
 	if (nb >= baselen)
 	{
-		putnumber((int)(nb / baselen), base, len + 1);
-		write (1, &base[nb % baselen], 1);
+		putnumber((int)(nb / baselen), base, len);
+		len += (unsigned int)write(1, &base[nb % baselen], 1);
 	}
 	else
-		write(1, &base[nb], 1);
+		len += (unsigned int)write(1, &base[nb], 1);
 	len++;
 	return (len);
 }
 
+//TESTING HARNESS, DELETE OR COMMENT OUT LATER
 #include <stdio.h>
 #include <stdlib.h>
 int main(int ac, char **av)
 {
 	if (ac != 2)
 		return 1;
-	char base[16] = "0123456789abcdef";
-	char base2[10] = "0123456789";
+	char base[17] = "0123456789abcdef";
+	char base2[11] = "0123456789";
 	int number = atoi(av[1]);
 
 	write(1, "number: ", 8);
