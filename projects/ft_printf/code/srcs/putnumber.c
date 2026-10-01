@@ -6,7 +6,7 @@
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/30 number:38:42 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/01 15:46:37 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/01 16:51:36 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,33 @@ int	ft_strlen(char *s)
 	return (i);
 }
 
-unsigned int	putnumber(int nbr, char *base, unsigned int len)
+unsigned int	putchar_return(char c)
 {
-	long	nb;
-	int		baselen;
+	return ((unsigned int)write (1, &c, 1));
+}
+
+unsigned int	putnumber(long nbr, char *base, unsigned int len)
+{
+	unsigned int	baselen;
 
 	baselen = ft_strlen(base);
-	if (nbr == 0)
-		return ((unsigned int)write(1, "0", 1));
-	nb = nbr;
-	if (nbr < 0 && baselen == 10) // how do I handle other bases?
+	if (nbr < 0)
 	{
-		nb = -nb;
-		len += (unsigned int)write(1, "-", 1);
+		if (baselen == 10)
+		{
+			len += putchar_return('-');
+			nbr = -nbr;
+		}
+		else
+			nbr = (unsigned int)nbr;
 	}
-	if (nb >= baselen)
+	if (nbr >= baselen)
 	{
-		putnumber((int)(nb / baselen), base, len);
-		len += (unsigned int)write(1, &base[nb % baselen], 1);
+		putnumber((nbr / baselen), base, len++);
+		len += putchar_return(base[nbr %  baselen]);
 	}
 	else
-		len += (unsigned int)write(1, &base[nb], 1);
-	len++;
+		len += putchar_return(base[nbr %  baselen]);
 	return (len);
 }
 
