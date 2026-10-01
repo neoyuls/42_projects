@@ -6,10 +6,9 @@
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 23:36:06 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/02 00:17:05 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/02 01:44:30 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "printf.h"
 
@@ -21,11 +20,6 @@ int	ft_strlen(char *s)
 	while (s[i])
 		i++;
 	return (i);
-}
-
-unsigned int	putchar_return(char c)
-{
-	return ((unsigned int)write (1, &c, 1));
 }
 
 unsigned int	putnumber(long nbr, char *base)
@@ -48,14 +42,14 @@ unsigned int	putnumber(long nbr, char *base)
 	if (nbr >= baselen)
 	{
 		printed += putnumber((nbr / baselen), base);
-		printed += putchar_return(base[nbr %  baselen]);
+		printed += putchar_return(base[nbr % baselen]);
 	}
 	else
-		printed += putchar_return(base[nbr %  baselen]);
+		printed += putchar_return(base[nbr % baselen]);
 	return (printed);
 }
 
-//TESTING HARNESS, DELETE OR COMMENT OUT LATER
+/*
 #include <stdio.h>
 #include <stdlib.h>
 int main(int ac, char **av)
@@ -73,3 +67,4 @@ int main(int ac, char **av)
 	printf("\nlen:%u\n", putnumber(number, base2));
 	return 0;
 }
+*/
