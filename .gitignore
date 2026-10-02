@@ -8,3 +8,4 @@ libft.h/libft.a/tests/*
 nvim.log
 .env*
 .*.swp
+printfTester/
