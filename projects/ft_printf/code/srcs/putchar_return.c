@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-unsigned int	putchar_return(char c)
+int	putchar_return(char c)
 {
-	return ((unsigned int)write(1, &c, 1));
+	return ((int)write(1, &c, 1));
 }

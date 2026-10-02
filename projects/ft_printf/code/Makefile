@@ -3,9 +3,10 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -Iincludes
 HEADER = includes/ft_printf.h
 
-SRCS = srcs/ft_printf.c srcs/putnumber.c \
+SRCS = srcs/ft_printf.c \
 	   srcs/putpointer.c srcs/putstring.c \
-	   srcs/putchar_return.c
+	   srcs/putchar_return.c srcs/ft_strlen.c \
+	   srcs/putsigned.c srcs/putunsigned.c
 
 OBJS_DIR = objs
 OBJS = $(SRCS:%.c=$(OBJS_DIR)/%.o)

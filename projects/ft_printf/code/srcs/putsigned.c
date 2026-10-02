@@ -1,47 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   putnumber.c                                        :+:      :+:    :+:   */
+/*   putsigned.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 23:36:06 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/02 13:53:11 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/02 15:12:47 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen(char *s)
+int	putsigned(long nbr, char *base)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-unsigned int	putnumber(long nbr, char *base)
-{
-	unsigned int	baselen;
-	unsigned int	printed;
+	int	baselen;
+	int	printed;
 
 	baselen = ft_strlen(base);
 	printed = 0;
 	if (nbr < 0)
 	{
-		if (baselen == 10)
-		{
-			printed += putchar_return('-');
-			nbr = -nbr;
-		}
-		else
-			nbr = (unsigned int)nbr;
+		printed += putchar_return('-');
+		nbr = -nbr;
 	}
 	if (nbr >= baselen)
 	{
-		printed += putnumber((nbr / baselen), base);
+		printed += putunsigned((nbr / baselen), base);
 		printed += putchar_return(base[nbr % baselen]);
 	}
 	else

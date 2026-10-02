@@ -6,7 +6,7 @@
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 08:03:51 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/02 01:49:28 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/02 15:14:21 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@
 # include <unistd.h>
 
 int				ft_printf(const char *format, ...);
+int				ft_strlen(char *s);
 int				putstring(char *s);
 int				putpointer(void *p);
-int				putunsigned(unsigned int nbr);
 int				puthexlower(int nbr);
 int				puthexupper(int nbr);
-unsigned int	putchar_return(char c);
-unsigned int	putnumber(long nbr, char *base);
+int				putchar_return(char c);
+int				putsigned(long nbr, char *base);
+int				putunsigned(unsigned long nbr, char *base);
 
 #endif
