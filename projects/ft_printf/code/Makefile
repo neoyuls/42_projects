@@ -1,7 +1,7 @@
 NAME = libftprintf.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -Iincludes
-HEADER = includes/printf.h
+HEADER = includes/ft_printf.h
 
 SRCS = srcs/ft_printf.c srcs/putnumber.c \
 	   srcs/putpointer.c srcs/putstring.c \
