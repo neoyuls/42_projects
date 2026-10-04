@@ -6,7 +6,7 @@
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 07:21:20 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/02 15:18:33 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/04 18:27:49 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ int	ft_printf(const char *format, ...)
 			i++;
 			len += check_arg(format[i], ap);
 		}
-		i++;
+		if (format[i])
+			i++;
 	}
 	va_end(ap);
 	return (len);
