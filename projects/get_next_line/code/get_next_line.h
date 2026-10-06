@@ -6,7 +6,7 @@
 /*   By: jvergon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 15:49:48 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/06 03:18:48 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/06 13:38:21 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,14 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-# define BUFFER_SIZE 42
+#define BUFFER_SIZE 42
 
-typedef struct s_utils
-{
-	char	*line;
-}	t_utils;
-
-char *get_next_line(int fd);
+char	*get_next_line(int fd);
+char	*read_line(int fd, char *rest);
+char	*ft_strdup(const char *s);
+char	*ft_strchr(const char *s, int c);
+char    *ft_strjoin(char const *s1, char const *s2);
+char    *ft_substr(char const *s, unsigned int start, size_t len);
+size_t	ft_strlen(const char *s);
 
 #endif
