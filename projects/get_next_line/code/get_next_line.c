@@ -6,10 +6,11 @@
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 18:43:47 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/06 16:41:48 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/06 17:22:27 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "get_next_line.h"
 
 char	*get_rest(char *rest)
@@ -18,14 +19,14 @@ char	*get_rest(char *rest)
 	int		i;
 
 	i = 0;
-	while (rest[i] != '\n' && rest[i])
+	while (rest[i] && rest[i] != '\n')
 		i++;
 	if (rest[i] == '\0')
 	{
 		free(rest);
 		return (NULL);
 	}
-	line = ft_substr(rest, 0, i + 1);
+	line = ft_substr(rest, i, ft_strlen(rest) - 1 + 1);
 	if (!line)
 		return (NULL);
 	free(rest);
@@ -61,21 +62,18 @@ char	*get_next_line(int fd)
 {
 	static char	*rest;
 	char		*line;
-	int			i;
 
 	if (!rest)
 		rest = ft_strdup("");
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	i = 0;
+	// i = 0;
 	line = NULL;
 	rest = read_file(fd, rest);
 	if (!rest)
 		return (NULL);
 	if (*rest)
 	{
-		while (rest[i] && rest[i] != '\n')
-			i++;
 		line = ft_strdup(rest);
 		if (!line)
 			return (NULL);
@@ -85,17 +83,16 @@ char	*get_next_line(int fd)
 }
 
 #include <fcntl.h>
-#include <stdio.h>
 
 int	main()
 {
-	int fd = open("get_next_line.c", O_RDONLY);
+	int fd = open("get_next_line.h", O_RDONLY);
 	char *line;
 	//int i = 0;
 
 	while ((line = get_next_line(fd)) != NULL)
 	{
-		printf("%s\n\n", line);
+		printf("%s\n", line);
 		free(line);
 	}
 	return (0);
