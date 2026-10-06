@@ -6,7 +6,7 @@
 /*   By: jvergon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 15:49:48 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/05 19:19:35 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/06 03:18:48 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,10 @@
 
 # define BUFFER_SIZE 42
 
-typedef struct	s_indices;
+typedef struct s_utils
 {
-	int	i;
-	int	j;
-	int	k;
-	int	l;
-}		t_index;
+	char	*line;
+}	t_utils;
 
 char *get_next_line(int fd);
 
