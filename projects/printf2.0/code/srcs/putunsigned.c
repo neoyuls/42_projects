@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   putunsigned.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/04 18:43:47 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/05 19:13:52 by jvernon          ###   ########.fr       */
+/*   Created: 2026/10/02 14:58:09 by jvernon           #+#    #+#             */
+/*   Updated: 2026/10/02 15:10:56 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "ft_printf.h"
 
-char *get_next_line(int fd)
+int	putunsigned(unsigned long nbr, char *base)
 {
-	ssize_t		bytesread;
-	size_t		number_bytes;
-	static char	*buffer;
+	unsigned long	baselen;
+	int				printed;
 
-	buffer = malloc(sizeof(BUFFER_SIZE) + 1);
-	while (bytesread != -1)
-		bytesread = read(fd, buffer, number_bytes);
-	
+	baselen = ft_strlen(base);
+	printed = 0;
+	if (nbr >= baselen)
+	{
+		printed += putunsigned((nbr / baselen), base);
+		printed += putchar_return(base[nbr % baselen]);
+	}
+	else
+		printed += putchar_return(base[nbr % baselen]);
+	return (printed);
 }

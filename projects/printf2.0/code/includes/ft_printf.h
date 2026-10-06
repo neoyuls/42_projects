@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/04 18:43:47 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/05 19:13:52 by jvernon          ###   ########.fr       */
+/*   Created: 2026/10/05 01:35:43 by jvernon           #+#    #+#             */
+/*   Updated: 2026/10/05 02:42:00 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-char *get_next_line(int fd)
-{
-	ssize_t		bytesread;
-	size_t		number_bytes;
-	static char	*buffer;
+# include <stdarg.h>
+# include <unistd.h>
 
-	buffer = malloc(sizeof(BUFFER_SIZE) + 1);
-	while (bytesread != -1)
-		bytesread = read(fd, buffer, number_bytes);
-	
-}
+int				ft_printf(const char *format, ...);
+int				ft_strlen(char *s);
+int				putstring(char *s);
+int				putpointer(void *p);
+int				puthexlower(int nbr);
+int				puthexupper(int nbr);
+int				putchar_return(char c);
+int				putsigned(long nbr, char *base);
+int				putunsigned(unsigned long nbr, char *base);
+
+#endif

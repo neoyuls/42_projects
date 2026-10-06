@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   putstring.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/04 18:43:47 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/05 19:13:52 by jvernon          ###   ########.fr       */
+/*   Created: 2026/09/30 15:17:43 by jvernon           #+#    #+#             */
+/*   Updated: 2026/10/02 01:41:51 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "ft_printf.h"
 
-char *get_next_line(int fd)
+int	putstring(char *s)
 {
-	ssize_t		bytesread;
-	size_t		number_bytes;
-	static char	*buffer;
+	int	i;
 
-	buffer = malloc(sizeof(BUFFER_SIZE) + 1);
-	while (bytesread != -1)
-		bytesread = read(fd, buffer, number_bytes);
-	
+	if (!s)
+		return ((int)write(1, "(null)", 6));
+	i = 0;
+	while (s[i])
+	{
+		write(1, &s[i], 1);
+		i++;
+	}
+	return (i);
 }

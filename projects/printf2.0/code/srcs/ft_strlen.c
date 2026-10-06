@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/04 18:43:47 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/05 19:13:52 by jvernon          ###   ########.fr       */
+/*   Created: 2026/10/02 15:01:24 by jvernon           #+#    #+#             */
+/*   Updated: 2026/10/02 15:01:30 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-
-char *get_next_line(int fd)
+int	ft_strlen(char *s)
 {
-	ssize_t		bytesread;
-	size_t		number_bytes;
-	static char	*buffer;
+	int	i;
 
-	buffer = malloc(sizeof(BUFFER_SIZE) + 1);
-	while (bytesread != -1)
-		bytesread = read(fd, buffer, number_bytes);
-	
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

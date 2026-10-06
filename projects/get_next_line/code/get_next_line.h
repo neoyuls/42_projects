@@ -6,7 +6,7 @@
 /*   By: jvergon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 15:49:48 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/04 21:10:34 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/05 19:19:35 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,14 @@
 #include <unistd.h>
 
 # define BUFFER_SIZE 42
+
+typedef struct	s_indices;
+{
+	int	i;
+	int	j;
+	int	k;
+	int	l;
+}		t_index;
 
 char *get_next_line(int fd);
 

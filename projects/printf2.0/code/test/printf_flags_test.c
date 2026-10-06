@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   printf_flags_test.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/04 18:43:47 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/05 19:13:52 by jvernon          ###   ########.fr       */
+/*   Created: 2026/10/05 01:54:27 by jvernon           #+#    #+#             */
+/*   Updated: 2026/10/05 02:25:50 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include <stdio.h>
+#include <unistd.h>
+//#include "ft_printf.h"
 
-char *get_next_line(int fd)
+//int	main(int argcount, char *argarray[])
+int	main(void)
 {
-	ssize_t		bytesread;
-	size_t		number_bytes;
-	static char	*buffer;
-
-	buffer = malloc(sizeof(BUFFER_SIZE) + 1);
-	while (bytesread != -1)
-		bytesread = read(fd, buffer, number_bytes);
-	
+	/*
+	if (argcount != 2)
+	{
+		write(2, "Enter 1 string\n", 15);
+		return (1);
+	}
+	*/
+	// '-'
+	printf("string: \"%f\" \noutput with '-' flag: \n\"%-20.2f\"\n", 231.421321, 231.421321);
+	//ft_printf("string: \"%s\" \noutput with '-' flag: \n\"%-s\"\n", av[1], av[1])
+	return (0);
 }
