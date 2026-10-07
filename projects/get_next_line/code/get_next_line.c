@@ -6,30 +6,33 @@
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 18:43:47 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/06 17:22:27 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/07 22:36:31 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "get_next_line.h"
 
-char	*get_rest(char *rest)
+char	*get_rest(char **rest)
 {
 	char	*line;
 	int		i;
+	char	*separator;
 
+	separator = ft_strchr(*rest, '\n');
 	i = 0;
-	while (rest[i] && rest[i] != '\n')
+	while (*rest[i] && *rest[i] != '\n')
 		i++;
-	if (rest[i] == '\0')
+	if (*rest[i] == '\0')
 	{
 		free(rest);
 		return (NULL);
 	}
-	line = ft_substr(rest, i, ft_strlen(rest) - 1 + 1);
+	line = ft_substr(*rest, 0, separator - *rest + 1);
 	if (!line)
 		return (NULL);
-	free(rest);
+	free(*rest);
+	*rest = separator;
 	return (line);
 }
 
@@ -67,18 +70,18 @@ char	*get_next_line(int fd)
 		rest = ft_strdup("");
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	// i = 0;
 	line = NULL;
 	rest = read_file(fd, rest);
 	if (!rest)
 		return (NULL);
 	if (*rest)
 	{
-		line = ft_strdup(rest);
+		if (ft_strchr(rest, '\n'))
+			line = get_rest(&rest);
+		else
 		if (!line)
 			return (NULL);
 	}
-	rest = get_rest(rest);
 	return (line);
 }
 
@@ -86,14 +89,17 @@ char	*get_next_line(int fd)
 
 int	main()
 {
-	int fd = open("get_next_line.h", O_RDONLY);
+	int fd = open("get_next_line.c", O_RDONLY);
 	char *line;
-	//int i = 0;
+	int i = 0;
 
-	while ((line = get_next_line(fd)) != NULL)
+	// while ((line = get_next_line(fd)) != NULL)
+	while (i < 30)
 	{
+		line = get_next_line(fd);
 		printf("%s\n", line);
 		free(line);
+		i++;
 	}
 	return (0);
 }
