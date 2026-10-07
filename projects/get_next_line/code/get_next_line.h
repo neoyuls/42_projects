@@ -18,6 +18,13 @@
 
 #define BUFFER_SIZE 42
 
+typedef struct s_lines
+{
+    static char *rest;
+    char *line;
+    int  Index;
+} t_lines;
+
 char	*get_next_line(int fd);
 char	*read_line(int fd, char *rest);
 char	*ft_strdup(const char *s);
