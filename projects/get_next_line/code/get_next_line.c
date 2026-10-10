@@ -6,7 +6,7 @@
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 18:43:47 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/10 19:42:25 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/10 23:33:28 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,51 +20,60 @@ char	*get_rest(char **rest)
 	char	*temp;
 
 	separator = ft_strchr(*rest, '\n');
-	if (!separator)
 	if (separator)
 		line = ft_substr(*rest, 0, separator - *rest + 1);
 	else
-		line = *rest;
+		line = ft_strdup(*rest);
 	if (!line)
 	{
 		free(*rest);
 		*rest = NULL;
 		return (NULL);
 	}
-	temp = ft_strdup(separator + 1);
+	if (separator)
+		temp = ft_strdup(separator + 1);
+	else
+		temp = NULL;
 	free (*rest);
 	*rest = temp;
 	return (line);
+}
+
+static char	*free_all(char *buffer, char *rest)
+{
+	free(buffer);
+	free(rest);
+	return (NULL);
+}
+
+static char	*join_free(char *rest, char *buffer)
+{
+	char	*temp;
+
+	temp = ft_strjoin(rest, buffer);
+	free(rest);
+	return (temp);
 }
 
 char	*read_file(int fd, char *rest)
 {
 	ssize_t	bytesread;
 	char	*buffer;
-	char	*temp;
 
 	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
-		return (NULL);
-	*buffer = '\0';
+		return (free_all(NULL, rest));
 	bytesread = 1;
-	while (!(ft_strchr(buffer, '\n')) && bytesread > 0)
+	*buffer = '\0';
+	while (bytesread > 0 && !ft_strchr(buffer, '\n'))
 	{
 		bytesread = read(fd, buffer, BUFFER_SIZE);
-		if (bytesread == -1)
-		{
-			free(buffer);
-			return (NULL);
-		}
+		if (bytesread < 0)
+			return (free_all(buffer, rest));
 		buffer[bytesread] = '\0';
-		temp = ft_strjoin(rest, buffer);
-		free(rest);
-		if (!temp)
-		{
-			free(buffer);
-			return (NULL);
-		}
-		rest = temp;
+		rest = join_free(rest, buffer);
+		if (!rest)
+			return (free_all(buffer, NULL));
 	}
 	free(buffer);
 	return (rest);
@@ -81,7 +90,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = NULL;
 	rest = read_file(fd, rest);
-	if (!rest)
+	if (!rest || !*rest)
 	{
 		free(rest);
 		rest = NULL;
@@ -89,24 +98,4 @@ char	*get_next_line(int fd)
 	}
 	line = get_rest(&rest);
 	return (line);
-}
-
-#include <fcntl.h>
-
-int	main()
-{
-//	int fd = open("get_next_line.c", O_RDONLY);
-	int fd = 0;
-	char *line;
-	int i = 0;
-
-	// while ((line = get_next_line(fd)) != NULL)
-	while (i < 111)
-	{
-		line = get_next_line(fd);
-		printf("%s", line);
-		free(line);
-		i++;
-	}
-	return (0);
 }
