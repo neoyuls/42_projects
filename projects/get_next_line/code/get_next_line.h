@@ -6,24 +6,16 @@
 /*   By: jvergon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 15:49:48 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/06 13:38:21 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/10 18:10:01 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
+#define	BUFFER_SIZE	42
 #include <stdlib.h>
 #include <unistd.h>
-
-#define BUFFER_SIZE 42
-
-typedef struct s_lines
-{
-    static char *rest;
-    char *line;
-    int  Index;
-} t_lines;
 
 char	*get_next_line(int fd);
 char	*read_line(int fd, char *rest);

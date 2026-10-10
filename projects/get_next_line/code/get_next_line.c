@@ -6,7 +6,7 @@
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 18:43:47 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/07 22:36:31 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/10 19:42:25 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,24 @@
 char	*get_rest(char **rest)
 {
 	char	*line;
-	int		i;
 	char	*separator;
+	char	*temp;
 
 	separator = ft_strchr(*rest, '\n');
-	i = 0;
-	while (*rest[i] && *rest[i] != '\n')
-		i++;
-	if (*rest[i] == '\0')
+	if (!separator)
+	if (separator)
+		line = ft_substr(*rest, 0, separator - *rest + 1);
+	else
+		line = *rest;
+	if (!line)
 	{
-		free(rest);
+		free(*rest);
+		*rest = NULL;
 		return (NULL);
 	}
-	line = ft_substr(*rest, 0, separator - *rest + 1);
-	if (!line)
-		return (NULL);
-	free(*rest);
-	*rest = separator;
+	temp = ft_strdup(separator + 1);
+	free (*rest);
+	*rest = temp;
 	return (line);
 }
 
@@ -40,13 +41,14 @@ char	*read_file(int fd, char *rest)
 {
 	ssize_t	bytesread;
 	char	*buffer;
+	char	*temp;
 
 	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
 		return (NULL);
 	*buffer = '\0';
 	bytesread = 1;
-	while (!(ft_strchr(buffer, '\n')) && bytesread >= 0)
+	while (!(ft_strchr(buffer, '\n')) && bytesread > 0)
 	{
 		bytesread = read(fd, buffer, BUFFER_SIZE);
 		if (bytesread == -1)
@@ -55,7 +57,14 @@ char	*read_file(int fd, char *rest)
 			return (NULL);
 		}
 		buffer[bytesread] = '\0';
-		rest = ft_strjoin(rest, buffer);
+		temp = ft_strjoin(rest, buffer);
+		free(rest);
+		if (!temp)
+		{
+			free(buffer);
+			return (NULL);
+		}
+		rest = temp;
 	}
 	free(buffer);
 	return (rest);
@@ -73,15 +82,12 @@ char	*get_next_line(int fd)
 	line = NULL;
 	rest = read_file(fd, rest);
 	if (!rest)
-		return (NULL);
-	if (*rest)
 	{
-		if (ft_strchr(rest, '\n'))
-			line = get_rest(&rest);
-		else
-		if (!line)
-			return (NULL);
+		free(rest);
+		rest = NULL;
+		return (NULL);
 	}
+	line = get_rest(&rest);
 	return (line);
 }
 
@@ -89,15 +95,16 @@ char	*get_next_line(int fd)
 
 int	main()
 {
-	int fd = open("get_next_line.c", O_RDONLY);
+//	int fd = open("get_next_line.c", O_RDONLY);
+	int fd = 0;
 	char *line;
 	int i = 0;
 
 	// while ((line = get_next_line(fd)) != NULL)
-	while (i < 30)
+	while (i < 111)
 	{
 		line = get_next_line(fd);
-		printf("%s\n", line);
+		printf("%s", line);
 		free(line);
 		i++;
 	}
