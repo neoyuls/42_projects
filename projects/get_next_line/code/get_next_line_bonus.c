@@ -6,7 +6,7 @@
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 18:43:47 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/11 03:41:43 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/11 04:51:54 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,10 @@ char	*get_next_line(int fd)
 	static char	*rest[ARRAY_SIZE];
 	char		*line;
 
-	if (!rest[fd])
-		rest[fd] = ft_strdup("");
 	if (fd >= ARRAY_SIZE || fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
+	if (!rest[fd])
+		rest[fd] = ft_strdup("");
 	line = NULL;
 	rest[fd] = read_file(fd, rest[fd]);
 	if (!rest[fd] || *rest[fd] == '\0')
