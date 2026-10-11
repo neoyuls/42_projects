@@ -54,7 +54,7 @@ int main(void)
 ```
 
 ```sh
-cc -Wall -Wextra -Werror main.c get_next_line.c get_next_line_utils.c -o gnl
+cc -Wall -Wextra -Werror main.c get_next_line.c get_next_line_utils.c [main_function] -o gnl
 ```
 
 ### Buffer size
@@ -64,7 +64,7 @@ fetches. The `#define` in the header is guarded by `#ifndef`, so it can be
 overridden directly at compile time:
 
 ```sh
-cc -Wall -Wextra -Werror -D BUFFER_SIZE=1024 main.c get_next_line.c get_next_line_utils.c -o gnl
+cc -Wall -Wextra -Werror -D BUFFER_SIZE=1024 main.c get_next_line.c get_next_line_utils.c [main_function] -o gnl
 ```
 
 ## Bonus: multiple file descriptors
@@ -82,7 +82,7 @@ static char	*rest[ARRAY_SIZE];	/* ARRAY_SIZE = 1024 */
 - Reads from fds `>= ARRAY_SIZE` are rejected.
 
 ```sh
-cc -Wall -Wextra -Werror main.c get_next_line_bonus.c get_next_line_utils_bonus.c -o gnl_bonus
+cc -Wall -Wextra -Werror main.c get_next_line_bonus.c get_next_line_utils_bonus.c [main_function] -o gnl_bonus
 ```
 
 ## Project structure
@@ -95,3 +95,15 @@ cc -Wall -Wextra -Werror main.c get_next_line_bonus.c get_next_line_utils_bonus.
 ├── get_next_line_bonus.h        # bonus prototypes, BUFFER_SIZE, ARRAY_SIZE
 └── get_next_line_utils_bonus.c  # bonus helpers
 ```
+## Resources
+
+Several different resources were consulted whilst working on this project; namely:
+
+- `man` pages for `open` and `read`, for understanding mechanics behind obtaining and reading from file descriptors, as well as arguments which are passed to these functions
+- 42 norm and get_next_line subject
+
+### AI usage
+
+LLMs were used for tedious formatting tasks, generating parts of the README.md, and for the final rounds of testing before finishing the program, in order to find edge cases to account for in the code.
+
+The LLMs used were deepseek V4.1 flash and Kimi K3. None of the code or logic behind the code was written by AI.
