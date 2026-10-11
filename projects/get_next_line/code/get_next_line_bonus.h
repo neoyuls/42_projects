@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvergon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 15:49:48 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/11 00:04:32 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/11 00:04:16 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 #ifndef BUFFER_SIZE
 #define	BUFFER_SIZE	42
 #endif
+
+#define ARRAY_SIZE 1024
 #include <stdlib.h>
 #include <unistd.h>
 
