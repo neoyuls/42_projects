@@ -9,3 +9,4 @@ nvim.log
 .env*
 .*.swp
 printfTester/
+*.gch
