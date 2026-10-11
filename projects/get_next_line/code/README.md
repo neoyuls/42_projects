@@ -59,41 +59,39 @@ cc -Wall -Wextra -Werror main.c get_next_line.c get_next_line_utils.c -o gnl
 
 ### Buffer size
 
-`BUFFER_SIZE` (default `42`) is defined in `get_next_line.h` and controls how
-many bytes each `read()` call fetches. To override it at compile time with
-`-D BUFFER_SIZE=n`, remove or guard the `#define` in the header first —
-`tests/run_tests.sh` does this automatically on a scratch copy.
+`BUFFER_SIZE` (default `42`) controls how many bytes each `read()` call
+fetches. The `#define` in the header is guarded by `#ifndef`, so it can be
+overridden directly at compile time:
+
+```sh
+cc -Wall -Wextra -Werror -D BUFFER_SIZE=1024 main.c get_next_line.c get_next_line_utils.c -o gnl
+```
+
+## Bonus: multiple file descriptors
+
+The bonus version keeps **one stash per file descriptor**, so calls on
+different fds can be interleaved without mixing data:
+
+```c
+static char	*rest[ARRAY_SIZE];	/* ARRAY_SIZE = 1024 */
+```
+
+- `rest[fd]` holds the leftover for each fd independently.
+- An fd's stash is freed and reset to `NULL` once it reaches EOF, so memory
+  is released progressively instead of all at once.
+- Reads from fds `>= ARRAY_SIZE` are rejected.
+
+```sh
+cc -Wall -Wextra -Werror main.c get_next_line_bonus.c get_next_line_utils_bonus.c -o gnl_bonus
+```
 
 ## Project structure
 
 ```
-├── get_next_line.c        # get_next_line(), read_file(), get_rest()
-├── get_next_line.h        # prototypes, BUFFER_SIZE
-├── get_next_line_utils.c  # ft_strdup / ft_strchr / ft_strjoin / ft_substr / ft_strlen
-└── tests/
-    ├── test_gnl.c         # fork-protected harness, diffs output vs POSIX getline()
-    └── run_tests.sh       # builds & runs the harness across BUFFER_SIZEs + ASan/UBSan
+├── get_next_line.c              # get_next_line(), read_file(), get_rest()
+├── get_next_line.h              # prototypes, BUFFER_SIZE
+├── get_next_line_utils.c        # ft_strdup / ft_strchr / ft_strjoin / ft_substr / ft_strlen
+├── get_next_line_bonus.c        # multi-fd version: get_next_line(), read_file(), get_rest()
+├── get_next_line_bonus.h        # bonus prototypes, BUFFER_SIZE, ARRAY_SIZE
+└── get_next_line_utils_bonus.c  # bonus helpers
 ```
-
-## Testing
-
-```sh
-./tests/run_tests.sh
-```
-
-The harness checks each case in a forked child (a crash only fails that case)
-and compares every returned line against `getline()`:
-
-- edge cases: empty file, lone `\n`, missing final newline, blank/CRLF lines
-- stress: 5000-char line, line of exactly `BUFFER_SIZE`, 300 short lines
-- repeated calls after EOF, invalid fds, interleaved multi-fd reads
-
-Environment knobs: `BUFFER_SIZES="1 2 3 42 1024"`, `SKIP_SAN=1`, `SAN_BS=42`,
-`DETECT_LEAKS=1`, `CC`, `SAN_FLAGS`.
-
-### Current status
-
-- ✅ All single-fd cases pass for `BUFFER_SIZE` = 1, 2, 3, 42, 1024, clean under
-  AddressSanitizer/UBSan.
-- ❌ Interleaved multi-fd reads (bonus): the single shared static stash mixes
-  data between fds — per-fd storage is not implemented yet.
