@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvernon <jvernon@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/11 05:25:09 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/11 05:35:04 by jvernon          ###   ########.fr       */
+/*   Created: 2026/07/28 14:45:38 by jvernon           #+#    #+#             */
+/*   Updated: 2026/07/28 15:03:25 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-#include <unistd.h>
 #include <stdlib.h>
+#include "libft.h"
 
-typedef struct s_stack
+char	*ft_strdup(const char *s)
 {
-	int				number;
-	unsigned int	index;
-	struct s_stack	*next;
-}	t_stack;
+	char	*str;
+	size_t	i;
 
-#endif
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	str = malloc(sizeof(char) * (i + 1));
+	if ((!str))
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
+}

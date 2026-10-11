@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fill_stack.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvernon <jvernon@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/11 05:40:32 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/11 05:43:39 by jvernon          ###   ########.fr       */
+/*   Created: 2026/09/19 13:32:57 by jvernon           #+#    #+#             */
+/*   Updated: 2026/09/19 15:10:50 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-t_stack	*fill_stack(int value, int index)
+void	ft_putendl_fd(char *s, int fd)
 {
-	t_stack	*stack;
+	size_t		i;
 
-	stack->number = value;
-	stack->index = index;
-	stack->next = NULL;
-	return(stack);
+	i = 0;
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
+	write(fd, "\n", 1);
 }
