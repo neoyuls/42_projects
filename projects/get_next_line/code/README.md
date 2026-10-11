@@ -10,7 +10,7 @@ and `free` (42 Málaga).
 char *get_next_line(int fd);
 ```
 
-## Behavior
+## Description
 
 | Situation | Return value |
 |---|---|
@@ -32,8 +32,9 @@ char *get_next_line(int fd);
 3. Helpers in `get_next_line_utils.c`: `ft_strdup`, `ft_strchr`, `ft_strjoin`,
    `ft_substr`, `ft_strlen`.
 
-## Usage
+## Instructions
 
+An example of how this function can be called in a main function:
 ```c
 #include "get_next_line.h"
 #include <fcntl.h>
@@ -52,12 +53,11 @@ int main(void)
 	close(fd);
 }
 ```
+After writing the main function, compilation is done as such:
 
 ```sh
 cc -Wall -Wextra -Werror main.c get_next_line.c get_next_line_utils.c [main_function] -o gnl
 ```
-
-### Buffer size
 
 `BUFFER_SIZE` (default `42`) controls how many bytes each `read()` call
 fetches. The `#define` in the header is guarded by `#ifndef`, so it can be
@@ -95,6 +95,7 @@ cc -Wall -Wextra -Werror main.c get_next_line_bonus.c get_next_line_utils_bonus.
 ├── get_next_line_bonus.h        # bonus prototypes, BUFFER_SIZE, ARRAY_SIZE
 └── get_next_line_utils_bonus.c  # bonus helpers
 ```
+
 ## Resources
 
 Several different resources were consulted whilst working on this project; namely:
