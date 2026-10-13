@@ -6,11 +6,11 @@
 /*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/06 12:27:07 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/11 03:47:01 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/11 15:42:31 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_strdup(const char *s)
 {

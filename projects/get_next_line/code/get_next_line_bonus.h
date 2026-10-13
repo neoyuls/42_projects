@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvergon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
+/*   By: jvernon <jvernon@student.42malaga.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 15:49:48 by jvernon           #+#    #+#             */
-/*   Updated: 2026/10/11 00:04:16 by jvernon          ###   ########.fr       */
+/*   Updated: 2026/10/13 18:18:33 by jvernon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
